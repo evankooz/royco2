@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Royco Distributors</title>
+    <meta name="description" content="Learn about Royco Distributors — the Northeast's trusted industrial lubricants and equipment solutions partner since 1993." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* ── PAGE HERO ── */
+        .page-hero {
+            min-height: 360px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            overflow: hidden;
+            padding-top: 70px;
+        }
+        .page-hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(42,125,225,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(42,125,225,0.06) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridPan 22s linear infinite;
+        }
+        .page-hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.13;
+        }
+        .page-hero-orb-1 {
+            width: 500px; height: 500px;
+            background: var(--blue-bright);
+            top: -150px; right: -60px;
+        }
+        .page-hero-orb-2 {
+            width: 280px; height: 280px;
+            background: var(--red-mid);
+            bottom: -80px; left: 15%;
+        }
+        .page-hero-stripe {
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 5px;
+            background: linear-gradient(to bottom, var(--red-bright), var(--blue-bright), var(--red-bright));
+        }
+        .page-hero-inner {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 60px 60px;
+            width: 100%;
+        }
+        .breadcrumb {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            color: var(--steel);
+            margin-bottom: 18px;
+        }
+        .breadcrumb a { color: var(--steel); text-decoration: none; transition: color 0.25s; }
+        .breadcrumb a:hover { color: var(--blue-bright); }
+        .breadcrumb span { color: var(--red-bright); margin: 0 8px; }
+        .page-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 5vw, 5rem);
+            letter-spacing: 0.04em;
+            color: var(--white);
+            line-height: 1;
+        }
+        .page-title em {
+            color: transparent;
+            -webkit-text-stroke: 1.5px var(--blue-bright);
+            font-style: normal;
+        }
+        .page-subtitle {
+            margin-top: 14px;
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--silver);
+            max-width: 520px;
+        }
+
+        /* ── ABOUT CONTENT ── */
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 60px 100px;
+        }
+
+        /* Story section */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+            margin-bottom: 90px;
+        }
+        .story-text .section-body { margin-top: 0; }
+        .story-text p + p { margin-top: 18px; }
+        .story-pull {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 0.04em;
+            color: var(--white);
+            line-height: 1.15;
+            border-left: 4px solid var(--red-mid);
+            padding-left: 28px;
+            margin: 36px 0;
+        }
+
+        /* Stats row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--divider);
+            border: 1px solid var(--divider);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 90px;
+        }
+        .stat-block {
+            background: var(--navy-mid);
+            padding: 40px 30px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        .stat-block:hover { background: var(--navy-light); }
+        .stat-block-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            letter-spacing: 0.04em;
+            color: var(--white);
+            line-height: 1;
+        }
+        .stat-block-num span { color: var(--red-bright); }
+        .stat-block-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--silver);
+            margin-top: 8px;
+        }
+        .stat-block-sub {
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: var(--steel);
+            margin-top: 6px;
+        }
+
+        /* Values section */
+        .values-section { margin-bottom: 90px; }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 40px;
+        }
+        .value-card {
+            background: var(--navy-mid);
+            border: 1px solid var(--divider);
+            border-radius: 3px;
+            padding: 32px 28px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .value-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--red-mid), var(--blue-bright));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.23,1,0.32,1);
+        }
+        .value-card:hover {
+            border-color: rgba(42,125,225,0.3);
+            transform: translateY(-3px);
+        }
+        .value-card:hover::after { transform: scaleX(1); }
+        .value-icon { font-size: 2rem; margin-bottom: 16px; }
+        .value-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: 0.06em;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+        .value-card p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: var(--silver);
+            line-height: 1.7;
+        }
+
+        /* Brands section */
+        .brands-section { margin-bottom: 90px; }
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-top: 40px;
+        }
+        .brand-card {
+            background: var(--navy-mid);
+            border: 1px solid var(--divider);
+            border-radius: 3px;
+            padding: 24px 16px;
+            text-align: center;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .brand-card:hover {
+            border-color: var(--blue-bright);
+            transform: translateY(-2px);
+        }
+        .brand-card-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            letter-spacing: 0.1em;
+            color: var(--white);
+        }
+        .brand-card-type {
+            font-size: 0.72rem;
+            font-weight: 300;
+            color: var(--steel);
+            margin-top: 4px;
+        }
+
+        /* CTA strip */
+        .about-cta {
+            background: var(--navy-mid);
+            border: 1px solid var(--divider);
+            border-radius: 4px;
+            padding: 48px 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--red-mid), var(--blue-bright));
+        }
+        .about-cta h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 0.05em;
+            color: var(--white);
+        }
+        .about-cta p {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--silver);
+            margin-top: 6px;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 960px) {
+            .page-hero-inner { padding: 48px 24px 48px; }
+            .about-content { padding: 60px 24px 80px; }
+            .story-grid { grid-template-columns: 1fr; gap: 40px; }
+            .stats-row { grid-template-columns: 1fr 1fr; }
+            .values-grid { grid-template-columns: 1fr 1fr; }
+            .brands-grid { grid-template-columns: repeat(3, 1fr); }
+            .about-cta { padding: 36px 28px; }
+        }
+        @media (max-width: 560px) {
+            .values-grid { grid-template-columns: 1fr; }
+            .brands-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── NAVBAR ── -->
+    <header class="navbar" id="navbar">
+        <a href="../index.html" class="nav-logo">
+            <img src="../images/logo.png" alt="Royco Distributors Logo" onerror="this.style.display='none'">
+            <span class="nav-logo-text">Royco Distributors</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navMenu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <!-- ── PAGE HERO ── -->
+    <section class="page-hero">
+        <div class="page-hero-grid"></div>
+        <div class="page-hero-orb page-hero-orb-1"></div>
+        <div class="page-hero-orb page-hero-orb-2"></div>
+        <div class="page-hero-stripe"></div>
+        <div class="page-hero-inner">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>›</span>
+                About
+            </div>
+            <h1 class="page-title">Our <em>Story</em></h1>
+            <p class="page-subtitle">Three decades of integrity, expertise, and dedication to the businesses that keep the Northeast running.</p>
+        </div>
+    </section>
+
+    <!-- ── MAIN CONTENT ── -->
+    <main class="about-content">
+
+        <!-- STORY -->
+        <div class="story-grid">
+            <div class="reveal-left">
+                <div class="section-label">Who We Are</div>
+                <h2 class="section-title">Built on Trust. Proven Over Time.</h2>
+                <div class="story-pull">"A partner you can count on — every order, every time."</div>
+            </div>
+            <div class="reveal">
+                <p class="section-body">
+                    Royco Distributors was founded in 1993 with a straightforward mission: bring the best industrial lubricants and supplies to the businesses of the Northeast — and back them with people who actually know the products inside and out.
+                </p>
+                <p class="section-body">
+                    Over more than thirty years, we've grown from a small regional distributor into one of the Northeast's most respected names in industrial supply. Our success hasn't come from cutting corners or chasing volume — it's come from building real, lasting relationships with our customers and holding ourselves to a higher standard on every order.
+                </p>
+                <p class="section-body">
+                    We serve manufacturers, fleet operators, automotive shops, construction companies, and industrial facilities of all sizes. Whether you need a single drum or a full-facility supply program, our team will find the right solution and stand behind it completely.
+                </p>
+            </div>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats-row reveal">
+            <div class="stat-block">
+                <div class="stat-block-num">30<span>+</span></div>
+                <div class="stat-block-label">Years in Business</div>
+                <div class="stat-block-sub">Founded 1993 in Gardner, MA</div>
+            </div>
+            <div class="stat-block">
+                <div class="stat-block-num">500<span>+</span></div>
+                <div class="stat-block-label">Products Available</div>
+                <div class="stat-block-sub">Across 6 product categories</div>
+            </div>
+            <div class="stat-block">
+                <div class="stat-block-num">6</div>
+                <div class="stat-block-label">States Served</div>
+                <div class="stat-block-sub">Throughout the Northeast</div>
+            </div>
+            <div class="stat-block">
+                <div class="stat-block-num">24<span>hr</span></div>
+                <div class="stat-block-label">Turnaround</div>
+                <div class="stat-block-sub">On in-stock orders</div>
+            </div>
+        </div>
+
+        <!-- VALUES -->
+        <div class="values-section">
+            <div class="reveal">
+                <div class="section-label">What We Stand For</div>
+                <h2 class="section-title">Our Core Values</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card reveal">
+                    <div class="value-icon">🎯</div>
+                    <h3>Expertise First</h3>
+                    <p>We don't just sell products — we understand them. Our team provides genuine technical guidance so you always get the right solution for your application.</p>
+                </div>
+                <div class="value-card reveal" style="transition-delay:0.1s">
+                    <div class="value-icon">🤝</div>
+                    <h3>Real Relationships</h3>
+                    <p>We treat every customer like a long-term partner. When you call Royco, you talk to a person — not a phone tree — who knows your business and cares about your outcome.</p>
+                </div>
+                <div class="value-card reveal" style="transition-delay:0.2s">
+                    <div class="value-icon">⚡</div>
+                    <h3>Reliability You Can Count On</h3>
+                    <p>We maintain deep inventory and consistent supply chains so you're never left waiting. When you need product, we have it — and we get it to you fast.</p>
+                </div>
+                <div class="value-card reveal" style="transition-delay:0.3s">
+                    <div class="value-icon">🏆</div>
+                    <h3>Quality Without Compromise</h3>
+                    <p>Every product in our catalog meets our high standards. We only partner with manufacturers we trust, and we stand behind what we sell — no exceptions.</p>
+                </div>
+                <div class="value-card reveal" style="transition-delay:0.4s">
+                    <div class="value-icon">🌱</div>
+                    <h3>Community Commitment</h3>
+                    <p>We're a New England business serving New England businesses. We take pride in our roots and reinvest in the communities and industries that have supported us for decades.</p>
+                </div>
+                <div class="value-card reveal" style="transition-delay:0.5s">
+                    <div class="value-icon">🔬</div>
+                    <h3>Staying Current</h3>
+                    <p>Industrial products evolve constantly. We stay ahead of new formulations, regulations, and technologies so our customers always have access to the best available solutions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BRANDS -->
+        <div class="brands-section">
+            <div class="reveal">
+                <div class="section-label">Our Partners</div>
+                <h2 class="section-title">Brands We Carry</h2>
+                <p class="section-body" style="max-width:560px">We partner with the most respected manufacturers in the industry, bringing you trusted name-brand products with the convenience of a local distributor.</p>
+            </div>
+            <div class="brands-grid reveal">
+                <div class="brand-card"><div class="brand-card-name">Mobil</div><div class="brand-card-type">Lubricants</div></div>
+                <div class="brand-card"><div class="brand-card-name">Shell</div><div class="brand-card-type">Lubricants</div></div>
+                <div class="brand-card"><div class="brand-card-name">Castrol</div><div class="brand-card-type">Lubricants</div></div>
+                <div class="brand-card"><div class="brand-card-name">Chevron</div><div class="brand-card-type">Lubricants</div></div>
+                <div class="brand-card"><div class="brand-card-name">Fuchs</div><div class="brand-card-type">Specialty</div></div>
+                <div class="brand-card"><div class="brand-card-name">Mystik</div><div class="brand-card-type">Lubricants</div></div>
+                <div class="brand-card"><div class="brand-card-name">Lubriplate</div><div class="brand-card-type">Greases</div></div>
+                <div class="brand-card"><div class="brand-card-name">WD-40</div><div class="brand-card-type">Chemicals</div></div>
+                <div class="brand-card"><div class="brand-card-name">Lucas Oil</div><div class="brand-card-type">Additives</div></div>
+                <div class="brand-card"><div class="brand-card-name">PIG</div><div class="brand-card-type">Absorbents</div></div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="about-cta reveal">
+            <div>
+                <h3>Ready to Work Together?</h3>
+                <p>Let's talk about your business needs — we'll build the right supply solution for you.</p>
+            </div>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;">
+                <a href="contact.html" class="btn-primary">Contact Us</a>
+                <a href="products.html" class="btn-outline">View Products</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+        <div class="footer-accent-line"></div>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="../images/logo.png" alt="Royco Distributors" onerror="this.style.display='none'">
+                <p>The Northeast's premier source for industrial lubricants, chemicals, and equipment solutions since 1993.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <p>
+                    <a href="tel:+19786328151">(978) 632-8151</a><br><br>
+                    211 Colony Rd<br>Gardner, MA 01440
+                </p>
+            </div>
+            <div class="footer-col">
+                <h5>Hours</h5>
+                <p>Monday – Friday<br>8:00 AM – 5:00 PM<br><br>Saturday – Sunday<br>Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Royco Distributors, Inc. All rights reserved.</p>
+            <p>Gardner, MA · Serving the Northeast</p>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+</body>
+</html>

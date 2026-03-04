@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products | Royco Distributors</title>
+    <meta name="description" content="Browse Royco Distributors' full catalog of industrial lubricants, chemicals, coolants, absorbents, racing fuels, and equipment solutions." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* ── PAGE HERO ── */
+        .page-hero {
+            min-height: 340px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            overflow: hidden;
+            padding-top: 70px;
+        }
+        .page-hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(42,125,225,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(42,125,225,0.06) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridPan 22s linear infinite;
+        }
+        .page-hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.14;
+        }
+        .page-hero-orb-1 {
+            width: 500px; height: 500px;
+            background: var(--blue-bright);
+            top: -150px; right: -80px;
+        }
+        .page-hero-orb-2 {
+            width: 280px; height: 280px;
+            background: var(--red-mid);
+            bottom: -80px; left: 10%;
+        }
+        .page-hero-stripe {
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 5px;
+            background: linear-gradient(to bottom, var(--red-bright), var(--blue-bright), var(--red-bright));
+        }
+        .page-hero-inner {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 60px 56px;
+            width: 100%;
+        }
+        .breadcrumb {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            color: var(--steel);
+            margin-bottom: 18px;
+        }
+        .breadcrumb a {
+            color: var(--steel);
+            text-decoration: none;
+            transition: color 0.25s;
+        }
+        .breadcrumb a:hover { color: var(--blue-bright); }
+        .breadcrumb span { color: var(--red-bright); margin: 0 8px; }
+        .page-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 5vw, 5rem);
+            letter-spacing: 0.04em;
+            color: var(--white);
+            line-height: 1;
+        }
+        .page-title em {
+            color: transparent;
+            -webkit-text-stroke: 1.5px var(--blue-bright);
+            font-style: normal;
+        }
+        .page-subtitle {
+            margin-top: 14px;
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--silver);
+            max-width: 520px;
+        }
+
+        /* ── FILTER BAR ── */
+        .filter-bar {
+            background: var(--navy-mid);
+            border-bottom: 1px solid var(--divider);
+            padding: 0 60px;
+            position: sticky;
+            top: 70px;
+            z-index: 400;
+        }
+        .filter-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 4px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .filter-inner::-webkit-scrollbar { display: none; }
+        .filter-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Barlow', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--steel);
+            padding: 16px 20px;
+            white-space: nowrap;
+            border-bottom: 2px solid transparent;
+            transition: color 0.25s, border-color 0.25s;
+        }
+        .filter-btn:hover { color: var(--silver); }
+        .filter-btn.active {
+            color: var(--white);
+            border-bottom-color: var(--red-bright);
+        }
+
+        /* ── PRODUCTS MAIN ── */
+        .products-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 70px 60px 100px;
+        }
+        .category-block { margin-bottom: 80px; }
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--divider);
+        }
+        .category-icon {
+            width: 52px; height: 52px;
+            background: rgba(176,28,46,0.1);
+            border: 1px solid rgba(176,28,46,0.25);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .category-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 0.06em;
+            color: var(--white);
+        }
+        .category-count {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--steel);
+            letter-spacing: 0.1em;
+            margin-top: 4px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+        .product-item {
+            background: var(--navy-mid);
+            border: 1px solid var(--divider);
+            border-radius: 3px;
+            padding: 24px 20px;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            cursor: default;
+        }
+        .product-item:hover {
+            border-color: var(--blue-bright);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(42,125,225,0.1);
+        }
+        .product-item-name {
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: var(--white);
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+        .product-item-desc {
+            font-size: 0.82rem;
+            font-weight: 300;
+            color: var(--silver);
+            line-height: 1.55;
+        }
+        .product-item-tag {
+            display: inline-block;
+            margin-top: 10px;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            color: var(--red-bright);
+            background: rgba(176,28,46,0.1);
+            border: 1px solid rgba(176,28,46,0.2);
+            padding: 3px 8px;
+            border-radius: 2px;
+        }
+
+        /* ── CTA BANNER ── */
+        .products-cta {
+            background: var(--navy-mid);
+            border: 1px solid var(--divider);
+            border-radius: 4px;
+            padding: 48px 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            position: relative;
+            overflow: hidden;
+        }
+        .products-cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--red-mid), var(--blue-bright));
+        }
+        .products-cta h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 0.05em;
+            color: var(--white);
+        }
+        .products-cta p {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--silver);
+            margin-top: 6px;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 960px) {
+            .page-hero-inner { padding: 48px 24px 44px; }
+            .filter-bar { padding: 0 24px; }
+            .products-main { padding: 50px 24px 80px; }
+            .product-grid { grid-template-columns: repeat(2, 1fr); }
+            .products-cta { padding: 36px 28px; }
+        }
+        @media (max-width: 560px) {
+            .product-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── NAVBAR ── -->
+    <header class="navbar" id="navbar">
+        <a href="../index.html" class="nav-logo">
+            <img src="../images/logo.png" alt="Royco Distributors Logo" onerror="this.style.display='none'">
+            <span class="nav-logo-text">Royco Distributors</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navMenu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <!-- ── PAGE HERO ── -->
+    <section class="page-hero">
+        <div class="page-hero-grid"></div>
+        <div class="page-hero-orb page-hero-orb-1"></div>
+        <div class="page-hero-orb page-hero-orb-2"></div>
+        <div class="page-hero-stripe"></div>
+        <div class="page-hero-inner">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>›</span>
+                Products
+            </div>
+            <h1 class="page-title">Our <em>Product</em> Catalog</h1>
+            <p class="page-subtitle">Premium industrial solutions across every category — sourced from the world's most trusted brands and delivered throughout the Northeast.</p>
+        </div>
+    </section>
+
+    <!-- ── FILTER BAR ── -->
+    <div class="filter-bar">
+        <div class="filter-inner">
+            <button class="filter-btn active" data-filter="all">All Products</button>
+            <button class="filter-btn" data-filter="lubricants">Lubricants</button>
+            <button class="filter-btn" data-filter="chemicals">Chemicals</button>
+            <button class="filter-btn" data-filter="coolants">Coolants</button>
+            <button class="filter-btn" data-filter="absorbents">Absorbents</button>
+            <button class="filter-btn" data-filter="fuels">Racing Fuels</button>
+            <button class="filter-btn" data-filter="equipment">Equipment</button>
+        </div>
+    </div>
+
+    <!-- ── PRODUCTS ── -->
+    <main class="products-main">
+
+        <!-- LUBRICANTS -->
+        <div class="category-block reveal" data-category="lubricants">
+            <div class="category-header">
+                <div class="category-icon">🛢️</div>
+                <div>
+                    <div class="category-title">Industrial Lubricants</div>
+                    <div class="category-count">Engine Oils · Gear Oils · Hydraulic Fluids · Greases</div>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-item-name">Motor Oils</div>
+                    <div class="product-item-desc">Full range of conventional, synthetic blend, and full-synthetic engine oils for all applications.</div>
+                    <span class="product-item-tag">Lubricant</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Hydraulic Fluids</div>
+                    <div class="product-item-desc">Premium hydraulic oils for industrial machinery, mobile equipment, and high-pressure systems.</div>
+                    <span class="product-item-tag">Lubricant</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Gear Oils</div>
+                    <div class="product-item-desc">Industrial and automotive gear lubricants for manual transmissions, differentials, and gearboxes.</div>
+                    <span class="product-item-tag">Lubricant</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Greases</div>
+                    <div class="product-item-desc">Multi-purpose and specialty greases for bearings, chassis, and high-temperature environments.</div>
+                    <span class="product-item-tag">Lubricant</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Compressor Oils</div>
+                    <div class="product-item-desc">Designed for rotary screw, reciprocating, and centrifugal air compressors.</div>
+                    <span class="product-item-tag">Lubricant</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Cutting & Metalworking Fluids</div>
+                    <div class="product-item-desc">Coolants and lubricants for machining, drilling, milling, and grinding operations.</div>
+                    <span class="product-item-tag">Lubricant</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Food-Grade Lubricants</div>
+                    <div class="product-item-desc">NSF H1 registered lubricants for food processing and packaging equipment.</div>
+                    <span class="product-item-tag">Lubricant</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Chain & Cable Lubricants</div>
+                    <div class="product-item-desc">Penetrating chain oils and wire rope lubricants for demanding industrial applications.</div>
+                    <span class="product-item-tag">Lubricant</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHEMICALS -->
+        <div class="category-block reveal" data-category="chemicals">
+            <div class="category-header">
+                <div class="category-icon">⚗️</div>
+                <div>
+                    <div class="category-title">Chemicals & Cleaners</div>
+                    <div class="category-count">Degreasers · Solvents · Aerosols · Specialty Chemicals</div>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-item-name">Industrial Degreasers</div>
+                    <div class="product-item-desc">Heavy-duty water-based and solvent degreasers for parts cleaning and surface prep.</div>
+                    <span class="product-item-tag">Chemical</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Aerosol Lubricants & Sprays</div>
+                    <div class="product-item-desc">Penetrants, dry lubricants, and contact cleaners in convenient aerosol format.</div>
+                    <span class="product-item-tag">Chemical</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Parts Washers & Solvents</div>
+                    <div class="product-item-desc">Non-flammable and petroleum-based solvents for bench and immersion parts cleaning.</div>
+                    <span class="product-item-tag">Chemical</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Rust Inhibitors</div>
+                    <div class="product-item-desc">Corrosion preventatives and rust inhibiting coatings for metal surfaces and equipment storage.</div>
+                    <span class="product-item-tag">Chemical</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Floor Cleaners</div>
+                    <div class="product-item-desc">Industrial-strength floor degreasers and cleaners safe for concrete and sealed surfaces.</div>
+                    <span class="product-item-tag">Chemical</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Hand Cleaners</div>
+                    <div class="product-item-desc">Industrial hand soaps and waterless hand cleaners for removing grease, oil, and grime.</div>
+                    <span class="product-item-tag">Chemical</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- COOLANTS -->
+        <div class="category-block reveal" data-category="coolants">
+            <div class="category-header">
+                <div class="category-icon">❄️</div>
+                <div>
+                    <div class="category-title">Coolants & Antifreeze</div>
+                    <div class="category-count">Engine Coolants · Industrial Fluids · Concentration Options</div>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-item-name">Conventional Antifreeze</div>
+                    <div class="product-item-desc">Green conventional antifreeze/coolant for older engines and standard cooling systems.</div>
+                    <span class="product-item-tag">Coolant</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Extended Life Coolant (OAT)</div>
+                    <div class="product-item-desc">Organic acid technology coolants offering up to 5-year or 150,000-mile service life.</div>
+                    <span class="product-item-tag">Coolant</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Heavy-Duty Diesel Coolant</div>
+                    <div class="product-item-desc">Pre-charged coolants and concentrate formulated for diesel engines and fleet applications.</div>
+                    <span class="product-item-tag">Coolant</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Propylene Glycol Coolant</div>
+                    <div class="product-item-desc">Low-toxicity coolant for food processing equipment and environmentally sensitive areas.</div>
+                    <span class="product-item-tag">Coolant</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Coolant Additives & SCA</div>
+                    <div class="product-item-desc">Supplemental coolant additives and DCA products for diesel engine liner protection.</div>
+                    <span class="product-item-tag">Coolant</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Industrial Process Coolants</div>
+                    <div class="product-item-desc">Closed-loop system fluids and heat transfer fluids for industrial process equipment.</div>
+                    <span class="product-item-tag">Coolant</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABSORBENTS -->
+        <div class="category-block reveal" data-category="absorbents">
+            <div class="category-header">
+                <div class="category-icon">🧹</div>
+                <div>
+                    <div class="category-title">Absorbents & Spill Control</div>
+                    <div class="category-count">Pads · Booms · Granular · Spill Kits</div>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-item-name">Oil-Only Absorbent Pads</div>
+                    <div class="product-item-desc">Polypropylene pads that absorb oil and fuel while repelling water. Ideal for outdoor use.</div>
+                    <span class="product-item-tag">Absorbent</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Universal Absorbent Pads</div>
+                    <div class="product-item-desc">All-purpose pads for oils, coolants, solvents, and water-based fluids.</div>
+                    <span class="product-item-tag">Absorbent</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Hazmat Absorbent Pads</div>
+                    <div class="product-item-desc">Chemical-resistant pads for aggressive solvents, acids, and caustics.</div>
+                    <span class="product-item-tag">Absorbent</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Absorbent Booms & Socks</div>
+                    <div class="product-item-desc">Flexible booms for containing and absorbing spills around machinery and drains.</div>
+                    <span class="product-item-tag">Absorbent</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Granular Absorbents</div>
+                    <div class="product-item-desc">Clay and mineral-based granular absorbents for large spills on floors and outdoor surfaces.</div>
+                    <span class="product-item-tag">Absorbent</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Spill Kits</div>
+                    <div class="product-item-desc">Complete OSHA-compliant spill response kits in a variety of sizes for oil, universal, or chemical spills.</div>
+                    <span class="product-item-tag">Absorbent</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RACING FUELS -->
+        <div class="category-block reveal" data-category="fuels">
+            <div class="category-header">
+                <div class="category-icon">⛽</div>
+                <div>
+                    <div class="category-title">Racing Fuels</div>
+                    <div class="category-count">High-Performance Fuels · Additives · Power Sports</div>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-item-name">Leaded Racing Fuel</div>
+                    <div class="product-item-desc">High-octane leaded fuel for circle track, drag racing, and vintage motorsports applications.</div>
+                    <span class="product-item-tag">Racing Fuel</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Unleaded Racing Fuel</div>
+                    <div class="product-item-desc">High-performance unleaded fuel for catalytic converter-equipped racing and road course vehicles.</div>
+                    <span class="product-item-tag">Racing Fuel</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Methanol</div>
+                    <div class="product-item-desc">Pure methanol for sprint cars, midgets, drag racing, and alcohol-fueled engines.</div>
+                    <span class="product-item-tag">Racing Fuel</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Ethanol / E85</div>
+                    <div class="product-item-desc">High-ethanol blend fuel for flex-fuel and dedicated ethanol racing applications.</div>
+                    <span class="product-item-tag">Racing Fuel</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Fuel Additives</div>
+                    <div class="product-item-desc">Octane boosters, fuel stabilizers, injector cleaners, and performance-enhancing additives.</div>
+                    <span class="product-item-tag">Racing Fuel</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Power Sports Fuels</div>
+                    <div class="product-item-desc">Pre-mixed and concentrate fuels for ATVs, snowmobiles, motorcycles, and small engines.</div>
+                    <span class="product-item-tag">Racing Fuel</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EQUIPMENT -->
+        <div class="category-block reveal" data-category="equipment">
+            <div class="category-header">
+                <div class="category-icon">🔧</div>
+                <div>
+                    <div class="category-title">Equipment & Dispensing</div>
+                    <div class="category-count">Fluid Handling · Pumps · Containers · Accessories</div>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-item-name">Drum Pumps</div>
+                    <div class="product-item-desc">Manual and electric drum pumps for transferring oils, chemicals, and fluids from drums and totes.</div>
+                    <span class="product-item-tag">Equipment</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Oil Drain Pans & Containers</div>
+                    <div class="product-item-desc">Low-profile drain pans, funnel containers, and fluid transfer containers in multiple sizes.</div>
+                    <span class="product-item-tag">Equipment</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Grease Guns</div>
+                    <div class="product-item-desc">Manual, pistol-grip, and battery-powered grease guns with a full range of fittings and accessories.</div>
+                    <span class="product-item-tag">Equipment</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Oil Filter Crushers</div>
+                    <div class="product-item-desc">Wall-mounted and freestanding filter crushers to reduce waste volume and recover oil.</div>
+                    <span class="product-item-tag">Equipment</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Fluid Storage Cabinets</div>
+                    <div class="product-item-desc">Flammable and non-flammable liquid storage cabinets compliant with OSHA and NFPA standards.</div>
+                    <span class="product-item-tag">Equipment</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Funnels, Nozzles & Hoses</div>
+                    <div class="product-item-desc">Dispensing accessories for clean and efficient fluid transfer in shop and industrial settings.</div>
+                    <span class="product-item-tag">Equipment</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA BANNER -->
+        <div class="products-cta reveal">
+            <div>
+                <h3>Don't See What You Need?</h3>
+                <p>We carry thousands of products — contact us and we'll source exactly what your operation requires.</p>
+            </div>
+            <a href="contact.html" class="btn-primary">Contact Us</a>
+        </div>
+
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+        <div class="footer-accent-line"></div>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="../images/logo.png" alt="Royco Distributors" onerror="this.style.display='none'">
+                <p>The Northeast's premier source for industrial lubricants, chemicals, and equipment solutions since 1993.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <p>
+                    <a href="tel:+19786328151">(978) 632-8151</a><br><br>
+                    211 Colony Rd<br>Gardner, MA 01440
+                </p>
+            </div>
+            <div class="footer-col">
+                <h5>Hours</h5>
+                <p>Monday – Friday<br>8:00 AM – 5:00 PM<br><br>Saturday – Sunday<br>Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Royco Distributors, Inc. All rights reserved.</p>
+            <p>Gardner, MA · Serving the Northeast</p>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+    <script>
+        // Filter tabs
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const categories = document.querySelectorAll('.category-block');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                categories.forEach(cat => {
+                    if (filter === 'all' || cat.dataset.category === filter) {
+                        cat.style.display = '';
+                    } else {
+                        cat.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
