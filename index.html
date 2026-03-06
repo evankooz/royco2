@@ -47,7 +47,8 @@
     </header>
 
     <!-- ── HERO ── -->
-    <section class="hero">
+    <section class="hero" style="background-image: url('images/ss1.png'); background-size: cover; background-position: center;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(11,18,32,0.92) 50%, rgba(11,18,32,0.6));"></div>
         <div class="hero-grid"></div>
         <div class="hero-accent"></div>
         <div class="hero-orb hero-orb-1"></div>
@@ -100,14 +101,29 @@
         <span class="trusted-label">Trusted Brands</span>
         <div class="trusted-divider"></div>
         <div class="brand-scroll">
-            <div class="brand-ticker">
-                <span>Mobil</span><span>Shell</span><span>Castrol</span>
-                <span>Chevron</span><span>Fuchs</span><span>Mystik</span>
-                <span>Lubriplate</span><span>WD-40</span><span>Lucas Oil</span>
-                <!-- Duplicated for seamless loop -->
-                <span>Mobil</span><span>Shell</span><span>Castrol</span>
-                <span>Chevron</span><span>Fuchs</span><span>Mystik</span>
-                <span>Lubriplate</span><span>WD-40</span><span>Lucas Oil</span>
+            <div class="brand-ticker" id="brandTicker">
+                <span>Chevron</span>
+                <span>Castrol</span>
+                <span>Irving</span>
+                <span>Sunoco</span>
+                <span>Oil-Dri</span>
+                <span>Mobil</span>
+                <span>Shell</span>
+                <span>Mystik</span>
+                <span>Lubriplate</span>
+                <span>WD-40</span>
+                <span>Lucas Oil</span>
+                <span>Chevron</span>
+                <span>Castrol</span>
+                <span>Irving</span>
+                <span>Sunoco</span>
+                <span>Oil-Dri</span>
+                <span>Mobil</span>
+                <span>Shell</span>
+                <span>Mystik</span>
+                <span>Lubriplate</span>
+                <span>WD-40</span>
+                <span>Lucas Oil</span>
             </div>
         </div>
     </div>
@@ -128,10 +144,8 @@
             </div>
         </div>
         <div class="about-cards reveal">
-            <div class="about-card">
-                <div class="about-card-icon">🏭</div>
-                <h4>Industrial Expertise</h4>
-                <p>Deep product knowledge and technical support for every application — from heavy machinery to precision manufacturing.</p>
+            <div class="about-card" style="padding:0;overflow:hidden;grid-column:span 2;min-height:200px;">
+                <img src="images/ss3.png" alt="Royco Distributors Fleet" style="width:100%;height:220px;object-fit:cover;object-position:center;display:block;">
             </div>
             <div class="about-card">
                 <div class="about-card-icon">🚚</div>
@@ -292,5 +306,7 @@
 
     <!-- JavaScript -->
     <script src="main.js"></script>
+</body>
+</html>
 </body>
 </html>

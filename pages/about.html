@@ -217,25 +217,25 @@
             background: var(--navy-mid);
             border: 1px solid var(--divider);
             border-radius: 3px;
-            padding: 24px 16px;
-            text-align: center;
+            padding: 28px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: border-color 0.3s, transform 0.3s;
+        }
+        .brand-card img {
+            filter: grayscale(100%);
+            opacity: 0.55;
+            transition: filter 0.3s, opacity 0.3s;
+            max-width: 100%;
         }
         .brand-card:hover {
             border-color: var(--blue-bright);
             transform: translateY(-2px);
         }
-        .brand-card-name {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.3rem;
-            letter-spacing: 0.1em;
-            color: var(--white);
-        }
-        .brand-card-type {
-            font-size: 0.72rem;
-            font-weight: 300;
-            color: var(--steel);
-            margin-top: 4px;
+        .brand-card:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
         }
 
         /* CTA strip */
@@ -309,7 +309,8 @@
     </header>
 
     <!-- ── PAGE HERO ── -->
-    <section class="page-hero">
+    <section class="page-hero" style="background-image: url('../images/ss2.png'); background-size: cover; background-position: center 40%;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(11,18,32,0.93) 55%, rgba(11,18,32,0.65));"></div>
         <div class="page-hero-grid"></div>
         <div class="page-hero-orb page-hero-orb-1"></div>
         <div class="page-hero-orb page-hero-orb-2"></div>
@@ -345,6 +346,24 @@
                 <p class="section-body">
                     We serve manufacturers, fleet operators, automotive shops, construction companies, and industrial facilities of all sizes. Whether you need a single drum or a full-facility supply program, our team will find the right solution and stand behind it completely.
                 </p>
+            </div>
+        </div>
+
+        <!-- FACILITY & FLEET PHOTOS -->
+        <div class="photo-row reveal" style="display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-bottom:90px;border-radius:4px;overflow:hidden;">
+            <div style="position:relative;overflow:hidden;border-radius:3px;">
+                <img src="../images/ss1.png" alt="Royco Distributors facility" style="width:100%;height:280px;object-fit:cover;object-position:center;display:block;transition:transform 0.6s ease;">
+                <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(to top,rgba(11,18,32,0.9),transparent);">
+                    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.08em;color:var(--white);">Our Facility</div>
+                    <div style="font-size:0.78rem;font-weight:300;color:var(--silver);">211 Colony Rd, Gardner, MA</div>
+                </div>
+            </div>
+            <div style="position:relative;overflow:hidden;border-radius:3px;">
+                <img src="../images/ss3.png" alt="Royco Distributors fleet" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;transition:transform 0.6s ease;">
+                <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(to top,rgba(11,18,32,0.9),transparent);">
+                    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.08em;color:var(--white);">Our Fleet</div>
+                    <div style="font-size:0.78rem;font-weight:300;color:var(--silver);">Delivering across the Northeast</div>
+                </div>
             </div>
         </div>
 
@@ -420,16 +439,11 @@
                 <p class="section-body" style="max-width:560px">We partner with the most respected manufacturers in the industry, bringing you trusted name-brand products with the convenience of a local distributor.</p>
             </div>
             <div class="brands-grid reveal">
-                <div class="brand-card"><div class="brand-card-name">Mobil</div><div class="brand-card-type">Lubricants</div></div>
-                <div class="brand-card"><div class="brand-card-name">Shell</div><div class="brand-card-type">Lubricants</div></div>
-                <div class="brand-card"><div class="brand-card-name">Castrol</div><div class="brand-card-type">Lubricants</div></div>
-                <div class="brand-card"><div class="brand-card-name">Chevron</div><div class="brand-card-type">Lubricants</div></div>
-                <div class="brand-card"><div class="brand-card-name">Fuchs</div><div class="brand-card-type">Specialty</div></div>
-                <div class="brand-card"><div class="brand-card-name">Mystik</div><div class="brand-card-type">Lubricants</div></div>
-                <div class="brand-card"><div class="brand-card-name">Lubriplate</div><div class="brand-card-type">Greases</div></div>
-                <div class="brand-card"><div class="brand-card-name">WD-40</div><div class="brand-card-type">Chemicals</div></div>
-                <div class="brand-card"><div class="brand-card-name">Lucas Oil</div><div class="brand-card-type">Additives</div></div>
-                <div class="brand-card"><div class="brand-card-name">PIG</div><div class="brand-card-type">Absorbents</div></div>
+                <div class="brand-card"><img src="../images/chevron.png" alt="Chevron" style="height:52px;width:auto;object-fit:contain;"></div>
+                <div class="brand-card"><img src="../images/castrol.png" alt="Castrol" style="height:52px;width:auto;object-fit:contain;"></div>
+                <div class="brand-card"><img src="../images/irving.png" alt="Irving" style="height:52px;width:auto;object-fit:contain;"></div>
+                <div class="brand-card"><img src="../images/sunoco.png" alt="Sunoco" style="height:52px;width:auto;object-fit:contain;"></div>
+                <div class="brand-card"><img src="../images/logo-oildri-o.png" alt="Oil-Dri" style="height:40px;width:auto;object-fit:contain;"></div>
             </div>
         </div>
 

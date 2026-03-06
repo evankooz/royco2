@@ -347,7 +347,8 @@
     </header>
 
     <!-- ── PAGE HERO ── -->
-    <section class="page-hero">
+    <section class="page-hero" style="background-image: url('../images/ss1.png'); background-size: cover; background-position: center 40%;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(11,18,32,0.93) 55%, rgba(11,18,32,0.65));"></div>
         <div class="page-hero-grid"></div>
         <div class="page-hero-orb page-hero-orb-1"></div>
         <div class="page-hero-orb page-hero-orb-2"></div>
@@ -514,35 +515,5 @@
     </footer>
 
     <script src="../main.js"></script>
-    <script>
-        // Form submission (UI only — wire up to backend/email service as needed)
-        document.getElementById('submitBtn').addEventListener('click', function () {
-            const firstName = document.getElementById('firstName').value.trim();
-            const email     = document.getElementById('email').value.trim();
-            const subject   = document.getElementById('subject').value;
-            const message   = document.getElementById('message').value.trim();
-
-            if (!firstName || !email || !subject || !message) {
-                // Highlight empty required fields
-                [
-                    { id: 'firstName', val: firstName },
-                    { id: 'email',     val: email },
-                    { id: 'subject',   val: subject },
-                    { id: 'message',   val: message }
-                ].forEach(({ id, val }) => {
-                    const el = document.getElementById(id);
-                    if (!val) {
-                        el.style.borderColor = 'var(--red-bright)';
-                        el.addEventListener('input', () => el.style.borderColor = '', { once: true });
-                    }
-                });
-                return;
-            }
-
-            // Show success state
-            document.getElementById('formContainer').style.display = 'none';
-            document.getElementById('formSuccess').style.display   = 'block';
-        });
-    </script>
 </body>
 </html>

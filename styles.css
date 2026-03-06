@@ -411,9 +411,11 @@ body::after {
 .brand-scroll { overflow: hidden; flex: 1; display: flex; }
 .brand-ticker {
     display: flex;
+    align-items: center;
     gap: 56px;
-    animation: ticker 22s linear infinite;
+    animation: ticker 28s linear infinite;
     white-space: nowrap;
+    will-change: transform;
 }
 .brand-ticker span {
     font-family: 'Bebas Neue', sans-serif;
@@ -422,6 +424,7 @@ body::after {
     color: var(--steel);
     transition: color 0.3s;
     cursor: default;
+    flex-shrink: 0;
 }
 .brand-ticker span:hover { color: var(--blue-bright); }
 @keyframes ticker {
