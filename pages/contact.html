@@ -423,9 +423,14 @@
 
         <!-- RIGHT: Form -->
         <div class="contact-form-panel reveal">
-            <div id="formContainer">
-                <div class="form-title">Send Us a Message</div>
-                <p class="form-sub">Fill out the form below and we'll respond within one business day.</p>
+            <div class="form-title">Send Us a Message</div>
+            <p class="form-sub">Fill out the form below and we'll respond within one business day.</p>
+
+            <form action="https://formsubmit.co/f4f0bdf1277675ef6af126d048321218" method="POST">
+                <!-- FormSubmit config -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://roycodistributors.com/pages/thank-you.html">
 
                 <div class="form-row">
                     <div class="form-group">
@@ -465,19 +470,9 @@
                     </div>
                 </div>
 
-                <button class="form-submit" id="submitBtn" type="button">Send Message</button>
+                <button type="submit" class="form-submit">Send Message</button>
                 <p class="form-note">We typically respond within one business day.</p>
-            </div>
-
-            <!-- Success state -->
-            <div class="form-success" id="formSuccess">
-                <div class="success-icon">✅</div>
-                <h3>Message Sent!</h3>
-                <p>Thanks for reaching out. A member of our team will be in touch within one business day.</p>
-                <div style="margin-top:28px;">
-                    <a href="../index.html" class="btn-outline">Back to Home</a>
-                </div>
-            </div>
+            </form>
         </div>
 
     </main>
