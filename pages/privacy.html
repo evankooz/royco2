@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | Royco Distributors</title>
+    <meta name="description" content="Privacy Policy for Royco Distributors, Inc. — how we collect, use, and protect your information." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* ── PAGE HERO ── */
+        .page-hero {
+            min-height: 280px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            overflow: hidden;
+            padding-top: 70px;
+        }
+        .page-hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(42,125,225,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(42,125,225,0.06) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridPan 22s linear infinite;
+        }
+        .page-hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.11;
+        }
+        .page-hero-orb-1 {
+            width: 420px; height: 420px;
+            background: var(--blue-bright);
+            top: -120px; right: -40px;
+        }
+        .page-hero-orb-2 {
+            width: 240px; height: 240px;
+            background: var(--red-mid);
+            bottom: -60px; left: 20%;
+        }
+        .page-hero-stripe {
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 5px;
+            background: linear-gradient(to bottom, var(--red-bright), var(--blue-bright), var(--red-bright));
+        }
+        .page-hero-inner {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 60px 50px;
+            width: 100%;
+        }
+        .breadcrumb {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            color: var(--steel);
+            margin-bottom: 18px;
+        }
+        .breadcrumb a { color: var(--steel); text-decoration: none; transition: color 0.25s; }
+        .breadcrumb a:hover { color: var(--blue-bright); }
+        .breadcrumb span { color: var(--red-bright); margin: 0 8px; }
+        .page-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            letter-spacing: 0.04em;
+            color: var(--white);
+            line-height: 1;
+        }
+        .page-title em {
+            color: transparent;
+            -webkit-text-stroke: 1.5px var(--blue-bright);
+            font-style: normal;
+        }
+        .page-subtitle {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: var(--silver);
+        }
+
+        /* ── POLICY LAYOUT ── */
+        .policy-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 70px 60px 100px;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        /* ── SIDEBAR TOC ── */
+        .policy-toc {
+            position: sticky;
+            top: 100px;
+        }
+        .toc-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--steel);
+            margin-bottom: 16px;
+        }
+        .toc-list {
+            list-style: none;
+            border-left: 2px solid var(--divider);
+        }
+        .toc-list li a {
+            display: block;
+            padding: 7px 0 7px 16px;
+            font-size: 0.82rem;
+            font-weight: 400;
+            color: var(--silver);
+            text-decoration: none;
+            transition: color 0.25s, border-color 0.25s;
+            border-left: 2px solid transparent;
+            margin-left: -2px;
+        }
+        .toc-list li a:hover {
+            color: var(--white);
+            border-left-color: var(--red-bright);
+        }
+        .toc-updated {
+            margin-top: 28px;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--steel);
+            letter-spacing: 0.08em;
+            line-height: 1.6;
+        }
+
+        /* ── POLICY CONTENT ── */
+        .policy-content {
+            min-width: 0;
+        }
+        .policy-section {
+            margin-bottom: 56px;
+            padding-bottom: 56px;
+            border-bottom: 1px solid var(--divider);
+        }
+        .policy-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .policy-section-num {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--red-bright);
+            letter-spacing: 0.12em;
+            margin-bottom: 10px;
+        }
+        .policy-section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.9rem;
+            letter-spacing: 0.06em;
+            color: var(--white);
+            margin-bottom: 18px;
+            line-height: 1.1;
+        }
+        .policy-section p {
+            font-size: 0.97rem;
+            font-weight: 300;
+            color: var(--silver);
+            line-height: 1.85;
+            margin-bottom: 14px;
+        }
+        .policy-section p:last-child { margin-bottom: 0; }
+        .policy-section ul {
+            list-style: none;
+            margin: 14px 0;
+        }
+        .policy-section ul li {
+            font-size: 0.97rem;
+            font-weight: 300;
+            color: var(--silver);
+            line-height: 1.75;
+            padding: 6px 0 6px 20px;
+            position: relative;
+        }
+        .policy-section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 15px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--red-mid);
+        }
+        .policy-contact-box {
+            background: var(--navy-mid);
+            border: 1px solid var(--divider);
+            border-left: 4px solid var(--red-mid);
+            border-radius: 3px;
+            padding: 28px 32px;
+            margin-top: 20px;
+        }
+        .policy-contact-box p {
+            margin-bottom: 6px !important;
+        }
+        .policy-contact-box a {
+            color: var(--blue-bright);
+            text-decoration: none;
+            transition: color 0.25s;
+        }
+        .policy-contact-box a:hover { color: var(--white); }
+
+        /* ── SCROLL OFFSET FOR FIXED NAV ── */
+        html { scroll-behavior: smooth; scroll-padding-top: 140px; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 960px) {
+            .page-hero-inner { padding: 40px 24px 44px; }
+            .policy-wrapper {
+                grid-template-columns: 1fr;
+                padding: 50px 24px 80px;
+                gap: 0;
+            }
+            .policy-toc {
+                position: static;
+                margin-bottom: 48px;
+                padding-bottom: 32px;
+                border-bottom: 1px solid var(--divider);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── NAVBAR ── -->
+    <header class="navbar" id="navbar">
+        <a href="../index.html" class="nav-logo">
+            <img src="../images/logo.png" alt="Royco Distributors Logo" onerror="this.style.display='none'">
+            <span class="nav-logo-text">Royco Distributors</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navMenu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <!-- ── PAGE HERO ── -->
+    <section class="page-hero">
+        <div class="page-hero-grid"></div>
+        <div class="page-hero-orb page-hero-orb-1"></div>
+        <div class="page-hero-orb page-hero-orb-2"></div>
+        <div class="page-hero-stripe"></div>
+        <div class="page-hero-inner">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>›</span>
+                Privacy Policy
+            </div>
+            <h1 class="page-title">Privacy <em>Policy</em></h1>
+            <p class="page-subtitle">Last updated: January 1, 2025</p>
+        </div>
+    </section>
+
+    <!-- ── CONTENT ── -->
+    <main class="policy-wrapper">
+
+        <!-- SIDEBAR TOC -->
+        <aside class="policy-toc reveal-left">
+            <div class="toc-label">Contents</div>
+            <ul class="toc-list">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#information-we-collect">Information We Collect</a></li>
+                <li><a href="#how-we-use">How We Use Your Information</a></li>
+                <li><a href="#sharing">Sharing of Information</a></li>
+                <li><a href="#cookies">Cookies</a></li>
+                <li><a href="#data-security">Data Security</a></li>
+                <li><a href="#your-rights">Your Rights</a></li>
+                <li><a href="#third-party">Third-Party Links</a></li>
+                <li><a href="#children">Children's Privacy</a></li>
+                <li><a href="#changes">Changes to This Policy</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <div class="toc-updated">
+                Effective Date<br>January 1, 2025<br><br>
+                Royco Distributors, Inc.<br>
+                Gardner, MA 01440
+            </div>
+        </aside>
+
+        <!-- POLICY BODY -->
+        <div class="policy-content reveal">
+
+            <div class="policy-section">
+                <span id="overview" style="display:block;position:relative;top:-140px;visibility:hidden;"></span>
+                <div class="policy-section-num">01 — Overview</div>
+                <h2>Overview</h2>
+                <p>Royco Distributors, Inc. ("Royco," "we," "us," or "our") is committed to protecting the privacy of our customers, website visitors, and business contacts. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or contact us for our products and services.</p>
+                <p>By using our website or submitting your information through our contact form, you agree to the practices described in this policy. If you do not agree with the terms of this policy, please do not use our website.</p>
+            </div>
+
+            <div class="policy-section">
+                <span id="information-we-collect" style="display:block;position:relative;top:-140px;visibility:hidden;"></span>
+                <div class="policy-section-num">02 — Information We Collect</div>
+                <h2>Information We Collect</h2>
+                <p>We collect information that you voluntarily provide to us and information that is automatically collected when you visit our website.</p>
+                <p><strong style="color:var(--off-white);font-weight:600;">Information You Provide Directly:</strong></p>
+                <ul>
+                    <li>Your name, email address, phone number, and company name when you submit our contact form</li>
+                    <li>The content of messages or inquiries you send to us</li>
+                    <li>Information you provide when requesting a quote or placing an order</li>
+                </ul>
+                <p><strong style="color:var(--off-white);font-weight:600;">Information Collected Automatically:</strong></p>
+                <ul>
+                    <li>Browser type and version, operating system, and device type</li>
+                    <li>IP address and general geographic location</li>
+                    <li>Pages visited, time spent on pages, and referring URLs</li>
+                    <li>Cookie and usage data (see the Cookies section below)</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <span id="how-we-use" style="display:block;position:relative;top:-140px;visibility:hidden;"></span>
+                <div class="policy-section-num">03 — How We Use Your Information</div>
+                <h2>How We Use Your Information</h2>
+                <p>We use the information we collect for legitimate business purposes, including:</p>
+                <ul>
+                    <li>Responding to your inquiries, quote requests, and customer service needs</li>
+                    <li>Processing orders and managing our business relationship with you</li>
+                    <li>Sending you information about products, services, or promotions that may be relevant to your business — only where you have opted in or have an existing relationship with us</li>
+                    <li>Improving our website, products, and services based on usage patterns</li>
+                    <li>Complying with applicable laws and regulations</li>
+                    <li>Protecting the security and integrity of our business operations</li>
+                </ul>
+                <p>We will not use your personal information for purposes that are incompatible with those listed above without first notifying you and, where required, obtaining your consent.</p>
+            </div>
+
+            <div class="policy-section">
+                <span id="sharing" style="display:block;position:relative;top:-140px;visibility:hidden;"></span>
+                <div class="policy-section-num">04 — Sharing of Information</div>
+                <h2>Sharing of Information</h2>
+                <p>We do not sell, trade, or rent your personal information to third parties. We may share your information in the following limited circumstances:</p>
+                <ul>
+                    <li><strong style="color:var(--off-white);font-weight:600;">Service Providers:</strong> We may share information with trusted third-party vendors who assist us in operating our website or conducting our business (such as email delivery services), provided they agree to keep your information confidential.</li>
+                    <li><strong style="color:var(--off-white);font-weight:600;">Legal Requirements:</strong> We may disclose your information if required to do so by law, court order, or government authority, or if we believe disclosure is necessary to protect the rights, property, or safety of Royco Distributors, our customers, or others.</li>
+                    <li><strong style="color:var(--off-white);font-weight:600;">Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. We will notify you of any such change in ownership or control of your personal information.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <span id="cookies" style="display:block;position:relative;top:-140px;visibility:hidden;"></span>
+                <div class="policy-section-num">05 — Cookies</div>
+                <h2>Cookies</h2>
+                <p>Our website may use cookies and similar tracking technologies to enhance your browsing experience. Cookies are small text files stored on your device that help us understand how visitors use our site.</p>
+                <p>We use cookies for the following purposes:</p>
+                <ul>
+                    <li><strong style="color:var(--off-white);font-weight:600;">Essential cookies:</strong> Required for the website to function properly.</li>
+                    <li><strong style="color:var(--off-white);font-weight:600;">Analytics cookies:</strong> Help us understand how visitors interact with our site so we can improve it.</li>
+                </ul>
+                <p>You can control or disable cookies through your browser settings. Note that disabling certain cookies may affect the functionality of our website. We do not use cookies for advertising or to track your activity across other websites.</p>
+            </div>
+
+            <div class="policy-section">
+                <span id="data-security" style="display:block;position:relative;top:-140px;visibility:hidden;"></span>
+                <div class="policy-section-num">06 — Data Security</div>
+                <h2>Data Security</h2>
+                <p>We take reasonable technical and organizational measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction. These measures include secure data transmission (HTTPS), access controls, and regular review of our data practices.</p>
+                <p>However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to protect your personal information, we cannot guarantee its absolute security. If you have reason to believe your interaction with us is no longer secure, please contact us immediately.</p>
+            </div>
+
+            <div class="policy-section">
+                <span id="your-rights" style="display:block;position:relative;top:-140px;visibility:hidden;"></span>
+                <div class="policy-section-num">07 — Your Rights</div>
+                <h2>Your Rights</h2>
+                <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
+                <ul>
+                    <li>The right to access the personal information we hold about you</li>
+                    <li>The right to request correction of inaccurate or incomplete information</li>
+                    <li>The right to request deletion of your personal information, subject to certain exceptions</li>
+                    <li>The right to opt out of marketing communications at any time</li>
+                    <li>The right to lodge a complaint with a relevant data protection authority</li>
+                </ul>
+                <p>To exercise any of these rights, please contact us using the information in the Contact section below. We will respond to your request within a reasonable timeframe.</p>
+            </div>
+
+            <div class="policy-section">
+                <span id="third-party" style="display:block;position:relative;top:-140px;visibility:hidden;"></span>
+                <div class="policy-section-num">08 — Third-Party Links</div>
+                <h2>Third-Party Links</h2>
+                <p>Our website may contain links to third-party websites, including our brand partners and suppliers. These websites have their own privacy policies, and we have no responsibility or liability for their content or practices. We encourage you to review the privacy policies of any third-party sites you visit.</p>
+            </div>
+
+            <div class="policy-section">
+                <span id="children" style="display:block;position:relative;top:-140px;visibility:hidden;"></span>
+                <div class="policy-section-num">09 — Children's Privacy</div>
+                <h2>Children's Privacy</h2>
+                <p>Our website and services are intended for business use and are not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe we have inadvertently collected information from a child, please contact us and we will promptly delete it.</p>
+            </div>
+
+            <div class="policy-section">
+                <span id="changes" style="display:block;position:relative;top:-140px;visibility:hidden;"></span>
+                <div class="policy-section-num">10 — Changes to This Policy</div>
+                <h2>Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, or legal requirements. When we make material changes, we will update the "Last Updated" date at the top of this page. We encourage you to review this policy periodically to stay informed about how we protect your information.</p>
+                <p>Your continued use of our website following the posting of changes constitutes your acceptance of those changes.</p>
+            </div>
+
+            <div class="policy-section">
+                <span id="contact" style="display:block;position:relative;top:-140px;visibility:hidden;"></span>
+                <div class="policy-section-num">11 — Contact Us</div>
+                <h2>Contact Us</h2>
+                <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+                <div class="policy-contact-box">
+                    <p><strong style="color:var(--off-white);font-weight:600;">Royco Distributors, Inc.</strong></p>
+                    <p>211 Colony Rd<br>Gardner, MA 01440</p>
+                    <p>Phone: <a href="tel:+19786328151">(978) 632-8151</a></p>
+                    <p>Website: <a href="../index.html">roycodistributors.com</a></p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+        <div class="footer-accent-line"></div>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="../images/logo.png" alt="Royco Distributors" onerror="this.style.display='none'">
+                <p>The Northeast's premier source for industrial lubricants, chemicals, and equipment solutions since 1993.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <p>
+                    <a href="tel:+19786328151">(978) 632-8151</a><br><br>
+                    211 Colony Rd<br>Gardner, MA 01440
+                </p>
+            </div>
+            <div class="footer-col">
+                <h5>Hours</h5>
+                <p>Monday – Friday<br>8:00 AM – 5:00 PM<br><br>Saturday – Sunday<br>Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Royco Distributors, Inc. All rights reserved.</p>
+            <p>Gardner, MA · Serving the Northeast</p>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+</body>
+</html>
