@@ -148,7 +148,7 @@
             border-bottom: 1px solid var(--divider);
         }
         .category-icon {
-            width: 52px; height: 52px;
+            width: 92px; height: 92px;
             background: rgba(176,28,46,0.1);
             border: 1px solid rgba(176,28,46,0.25);
             border-radius: 6px;
@@ -302,283 +302,355 @@
     <!-- ── FILTER BAR ── -->
     <div class="filter-bar">
         <div class="filter-inner">
-            <button class="filter-btn active" data-filter="all">All Products</button>
-            <button class="filter-btn" data-filter="lubricants">Lubricants</button>
-            <button class="filter-btn" data-filter="chemicals">Chemicals</button>
-            <button class="filter-btn" data-filter="coolants">Coolants</button>
-            <button class="filter-btn" data-filter="absorbents">Absorbents</button>
-            <button class="filter-btn" data-filter="fuels">Racing Fuels</button>
-            <button class="filter-btn" data-filter="equipment">Equipment</button>
+            <button class="filter-btn active" data-filter="all">All Brands</button>
+            <button class="filter-btn" data-filter="castrol">Castrol</button>
+            <button class="filter-btn" data-filter="chevron">Chevron</button>
+            <button class="filter-btn" data-filter="irving">Irving</button>
+            <button class="filter-btn" data-filter="purus">Purus</button>
+            <button class="filter-btn" data-filter="servicepro">Service Pro</button>
+            <button class="filter-btn" data-filter="sunoco">Sunoco</button>
         </div>
     </div>
 
     <!-- ── PRODUCTS ── -->
     <main class="products-main">
 
-        <!-- LUBRICANTS -->
-        <div class="category-block reveal" data-category="lubricants">
+        <!-- CASTROL -->
+        <div class="category-block reveal" data-category="castrol">
             <div class="category-header">
-                <div class="category-icon">🛢️</div>
+                <div class="category-icon">
+                    <img src="../images/castrol.png" alt="Castrol" style="height:80px;width:auto;object-fit:contain;">
+                </div>
                 <div>
-                    <div class="category-title">Industrial Lubricants</div>
-                    <div class="category-count">Engine Oils · Gear Oils · Hydraulic Fluids · Greases</div>
+                    <div class="category-title">Castrol</div>
+                    <div class="category-count">Motor Oils · Synthetic Lubricants · Industrial Fluids · Greases</div>
                 </div>
             </div>
             <div class="product-grid">
                 <div class="product-item">
-                    <div class="product-item-name">Motor Oils</div>
-                    <div class="product-item-desc">Full range of conventional, synthetic blend, and full-synthetic engine oils for all applications.</div>
-                    <span class="product-item-tag">Lubricant</span>
+                    <div class="product-item-name">Castrol GTX Motor Oil</div>
+                    <div class="product-item-desc">Conventional motor oil with superior engine protection for everyday driving and standard service intervals.</div>
+                    <span class="product-item-tag">Motor Oil</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Hydraulic Fluids</div>
-                    <div class="product-item-desc">Premium hydraulic oils for industrial machinery, mobile equipment, and high-pressure systems.</div>
-                    <span class="product-item-tag">Lubricant</span>
+                    <div class="product-item-name">Castrol EDGE Full Synthetic</div>
+                    <div class="product-item-desc">Full synthetic motor oil with Fluid Titanium Technology for maximum engine performance under pressure.</div>
+                    <span class="product-item-tag">Synthetic Oil</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Gear Oils</div>
-                    <div class="product-item-desc">Industrial and automotive gear lubricants for manual transmissions, differentials, and gearboxes.</div>
-                    <span class="product-item-tag">Lubricant</span>
+                    <div class="product-item-name">Castrol Magnatec</div>
+                    <div class="product-item-desc">Intelligent molecules cling to engine parts to provide instant protection from the moment you start.</div>
+                    <span class="product-item-tag">Motor Oil</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Greases</div>
-                    <div class="product-item-desc">Multi-purpose and specialty greases for bearings, chassis, and high-temperature environments.</div>
-                    <span class="product-item-tag">Lubricant</span>
+                    <div class="product-item-name">Castrol Transmax ATF</div>
+                    <div class="product-item-desc">Automatic transmission fluid engineered for smooth shifting and long-term transmission protection.</div>
+                    <span class="product-item-tag">Transmission Fluid</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Compressor Oils</div>
-                    <div class="product-item-desc">Designed for rotary screw, reciprocating, and centrifugal air compressors.</div>
-                    <span class="product-item-tag">Lubricant</span>
+                    <div class="product-item-name">Castrol Hyspin Hydraulic Oil</div>
+                    <div class="product-item-desc">Premium hydraulic fluid for industrial and mobile hydraulic systems requiring high wear protection.</div>
+                    <span class="product-item-tag">Hydraulic Oil</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Cutting & Metalworking Fluids</div>
-                    <div class="product-item-desc">Coolants and lubricants for machining, drilling, milling, and grinding operations.</div>
-                    <span class="product-item-tag">Lubricant</span>
+                    <div class="product-item-name">Castrol Optigear Gear Oil</div>
+                    <div class="product-item-desc">Industrial gear lubricant offering outstanding load-carrying capacity for enclosed gearboxes.</div>
+                    <span class="product-item-tag">Gear Oil</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Food-Grade Lubricants</div>
-                    <div class="product-item-desc">NSF H1 registered lubricants for food processing and packaging equipment.</div>
-                    <span class="product-item-tag">Lubricant</span>
+                    <div class="product-item-name">Castrol Molub-Alloy Grease</div>
+                    <div class="product-item-desc">Heavy-duty grease with solid lubricant additives for extreme pressure and high-temperature applications.</div>
+                    <span class="product-item-tag">Grease</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Chain & Cable Lubricants</div>
-                    <div class="product-item-desc">Penetrating chain oils and wire rope lubricants for demanding industrial applications.</div>
-                    <span class="product-item-tag">Lubricant</span>
+                    <div class="product-item-name">Castrol Axle EPX Gear Oil</div>
+                    <div class="product-item-desc">Extreme pressure gear oil for differentials, axles, and manual transmissions in demanding conditions.</div>
+                    <span class="product-item-tag">Gear Oil</span>
                 </div>
             </div>
         </div>
 
-        <!-- CHEMICALS -->
-        <div class="category-block reveal" data-category="chemicals">
+        <!-- CHEVRON -->
+        <div class="category-block reveal" data-category="chevron">
             <div class="category-header">
-                <div class="category-icon">⚗️</div>
+                <div class="category-icon">
+                    <img src="../images/chevron.png" alt="Chevron" style="height:80px;width:auto;object-fit:contain;">
+                </div>
                 <div>
-                    <div class="category-title">Chemicals & Cleaners</div>
-                    <div class="category-count">Degreasers · Solvents · Aerosols · Specialty Chemicals</div>
+                    <div class="category-title">Chevron</div>
+                    <div class="category-count">Delo Diesel Oils · Havoline Motor Oils · Hydraulics · Coolants</div>
+                </div>
+            </div>
+            <!-- Chevron visual banner -->
+            <div style="position:relative;overflow:hidden;border-radius:3px;margin-bottom:20px;">
+                <img src="../images/chevronbanner.png" alt="Chevron Visual Banner" style="width:100%;height:200px;object-fit:cover;object-position:center 60%;display:block;">
+                <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(11,18,32,0.80) 40%,transparent 75%);display:flex;align-items:center;padding:0 36px;">
+                    <div>
+                        <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.06em;color:var(--white);line-height:1;">Built for the long haul</div>
+                        <div style="font-size:0.88rem;font-weight:300;color:var(--silver);margin-top:6px;">Reliable solutions for fleets, drivers, and businesses.</div>
+                    </div>
                 </div>
             </div>
             <div class="product-grid">
                 <div class="product-item">
-                    <div class="product-item-name">Industrial Degreasers</div>
-                    <div class="product-item-desc">Heavy-duty water-based and solvent degreasers for parts cleaning and surface prep.</div>
-                    <span class="product-item-tag">Chemical</span>
+                    <div class="product-item-name">Delo 400 XSP Synthetic</div>
+                    <div class="product-item-desc">Full synthetic heavy-duty diesel engine oil delivering extended drain capability and superior wear protection.</div>
+                    <span class="product-item-tag">Diesel Oil</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Aerosol Lubricants & Sprays</div>
-                    <div class="product-item-desc">Penetrants, dry lubricants, and contact cleaners in convenient aerosol format.</div>
-                    <span class="product-item-tag">Chemical</span>
+                    <div class="product-item-name">Delo 400 LE Heavy Duty</div>
+                    <div class="product-item-desc">Multi-functional diesel engine oil formulated for on-highway and mixed-fleet operations.</div>
+                    <span class="product-item-tag">Diesel Oil</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Parts Washers & Solvents</div>
-                    <div class="product-item-desc">Non-flammable and petroleum-based solvents for bench and immersion parts cleaning.</div>
-                    <span class="product-item-tag">Chemical</span>
+                    <div class="product-item-name">Havoline Pro DS Motor Oil</div>
+                    <div class="product-item-desc">Full synthetic passenger car motor oil with Deposit Shield Technology for a cleaner engine.</div>
+                    <span class="product-item-tag">Motor Oil</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Rust Inhibitors</div>
-                    <div class="product-item-desc">Corrosion preventatives and rust inhibiting coatings for metal surfaces and equipment storage.</div>
-                    <span class="product-item-tag">Chemical</span>
+                    <div class="product-item-name">Havoline Conventional Motor Oil</div>
+                    <div class="product-item-desc">Dependable conventional motor oil providing reliable protection for standard gasoline engines.</div>
+                    <span class="product-item-tag">Motor Oil</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Floor Cleaners</div>
-                    <div class="product-item-desc">Industrial-strength floor degreasers and cleaners safe for concrete and sealed surfaces.</div>
-                    <span class="product-item-tag">Chemical</span>
+                    <div class="product-item-name">Chevron Rando HD Hydraulic Oil</div>
+                    <div class="product-item-desc">Industrial-grade anti-wear hydraulic oil for vane, piston, and gear pumps in stationary equipment.</div>
+                    <span class="product-item-tag">Hydraulic Oil</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Hand Cleaners</div>
-                    <div class="product-item-desc">Industrial hand soaps and waterless hand cleaners for removing grease, oil, and grime.</div>
+                    <div class="product-item-name">Chevron Meropa Gear Oil</div>
+                    <div class="product-item-desc">Industrial enclosed gear lubricant for worm, spur, helical, and bevel gearboxes.</div>
+                    <span class="product-item-tag">Gear Oil</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Delo ELC Antifreeze/Coolant</div>
+                    <div class="product-item-desc">Extended-life coolant for heavy-duty diesel engines with up to 600,000 mile service life.</div>
+                    <span class="product-item-tag">Coolant</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Chevron Ulti-Plex Grease</div>
+                    <div class="product-item-desc">Lithium complex grease with excellent mechanical stability and water resistance for industrial use.</div>
+                    <span class="product-item-tag">Grease</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- IRVING -->
+        <div class="category-block reveal" data-category="irving">
+            <div class="category-header">
+                <div class="category-icon">
+                    <img src="../images/irving.png" alt="Irving" style="height:80px;width:auto;object-fit:contain;">
+                </div>
+                <div>
+                    <div class="category-title">Irving</div>
+                    <div class="category-count">Motor Oils · Hydraulics · Gear Lubricants · Fluids</div>
+                </div>
+            </div>
+            <div style="position:relative;overflow:hidden;border-radius:3px;margin-bottom:20px;">
+                <img src="../images/irvingbanner.png" alt="Irving Visual Banner" style="width:100%;height:200px;object-fit:cover;object-position:center 60%;display:block;">
+                <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(11,18,32,0.80) 40%,transparent 75%);display:flex;align-items:center;padding:0 36px;">
+                    <div>
+                        <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.06em;color:var(--white);line-height:1;">Powering every mile</div>
+                        <div style="font-size:0.88rem;font-weight:300;color:var(--silver);margin-top:6px;">Supplying dependable fuels trusted across the Northeast.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-item-name">Irving Motor Oil</div>
+                    <div class="product-item-desc">Quality conventional motor oil for gasoline engines in passenger cars, light trucks, and vans.</div>
+                    <span class="product-item-tag">Motor Oil</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Irving Synthetic Motor Oil</div>
+                    <div class="product-item-desc">Full synthetic formulation providing enhanced protection and performance across a wide temperature range.</div>
+                    <span class="product-item-tag">Synthetic Oil</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Irving Hydraulic Oil</div>
+                    <div class="product-item-desc">Anti-wear hydraulic fluid for industrial and mobile hydraulic systems operating in varied conditions.</div>
+                    <span class="product-item-tag">Hydraulic Oil</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Irving Gear Oil</div>
+                    <div class="product-item-desc">Extreme pressure gear lubricant for manual transmissions, differentials, and industrial gearboxes.</div>
+                    <span class="product-item-tag">Gear Oil</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Irving ATF</div>
+                    <div class="product-item-desc">Automatic transmission fluid for a wide range of domestic and foreign automatic transmissions.</div>
+                    <span class="product-item-tag">Transmission Fluid</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Irving Antifreeze/Coolant</div>
+                    <div class="product-item-desc">Year-round engine coolant and antifreeze protection for gasoline and light diesel engines.</div>
+                    <span class="product-item-tag">Coolant</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PURUS -->
+        <div class="category-block reveal" data-category="purus">
+            <div class="category-header">
+                <div class="category-icon">
+                    <img src="../images/purus.png" alt="Purus" style="height:80px;width:auto;object-fit:contain;">
+                </div>
+                <div>
+                    <div class="category-title">Purus</div>
+                    <div class="category-count">Food-Grade Lubricants · NSF H1 Certified · Compressor Oils · Greases</div>
+                </div>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-item-name">Purus Food-Grade Hydraulic Oil</div>
+                    <div class="product-item-desc">NSF H1 registered hydraulic fluid for food processing and packaging equipment with incidental food contact.</div>
+                    <span class="product-item-tag">Food-Grade</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Purus Food-Grade Gear Oil</div>
+                    <div class="product-item-desc">Synthetic food-safe gear lubricant for enclosed gearboxes in food and beverage manufacturing.</div>
+                    <span class="product-item-tag">Food-Grade</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Purus Food-Grade Grease</div>
+                    <div class="product-item-desc">White mineral oil-based grease meeting NSF H1 approval for bearings near food processing lines.</div>
+                    <span class="product-item-tag">Food-Grade</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Purus Compressor Oil</div>
+                    <div class="product-item-desc">Food-safe compressor lubricant for air compressors in clean-room and food processing environments.</div>
+                    <span class="product-item-tag">Compressor Oil</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Purus Chain & Cable Oil</div>
+                    <div class="product-item-desc">NSF H1 food-grade chain lubricant for conveyor chains and cables in food production facilities.</div>
+                    <span class="product-item-tag">Food-Grade</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Purus Penetrating Oil</div>
+                    <div class="product-item-desc">Food-safe penetrating and release agent for loosening fasteners and preventing corrosion.</div>
+                    <span class="product-item-tag">Food-Grade</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SERVICE PRO -->
+        <div class="category-block reveal" data-category="servicepro">
+            <div class="category-header">
+                <div class="category-icon">
+                    <img src="../images/servicepro.png" alt="Service Pro" style="height:80px;width:auto;object-fit:contain;">
+                </div>
+                <div>
+                    <div class="category-title">Service Pro</div>
+                    <div class="category-count">Motor Oils · Filters · Chemicals · Additives · Shop Supplies</div>
+                </div>
+            </div>
+            <!-- Servicepro visual banner -->
+            <div style="position:relative;overflow:hidden;border-radius:3px;margin-bottom:20px;">
+                <img src="../images/serviceprobanner.png" alt="Service Pro Banner" style="width:100%;height:200px;object-fit:cover;object-position:center 60%;display:block;">
+                <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(11,18,32,0.80) 40%,transparent 75%);display:flex;align-items:center;padding:0 36px;">
+                    <div>
+                        <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.06em;color:var(--white);line-height:1;">Power starts with the right oil</div>
+                        <div style="font-size:0.88rem;font-weight:300;color:var(--silver);margin-top:6px;">Protection that keeps engines running stronger, longer.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-item-name">Service Pro Motor Oil</div>
+                    <div class="product-item-desc">Conventional and synthetic blend motor oils for routine oil changes in gasoline passenger vehicles.</div>
+                    <span class="product-item-tag">Motor Oil</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Service Pro Oil Filters</div>
+                    <div class="product-item-desc">High-efficiency spin-on oil filters covering a broad range of domestic and import applications.</div>
+                    <span class="product-item-tag">Filter</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Service Pro ATF</div>
+                    <div class="product-item-desc">Multi-vehicle automatic transmission fluid compatible with most domestic and import specifications.</div>
+                    <span class="product-item-tag">Transmission Fluid</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Service Pro Power Steering Fluid</div>
+                    <div class="product-item-desc">Universal power steering fluid for use in most domestic and foreign vehicle power steering systems.</div>
+                    <span class="product-item-tag">Fluid</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Service Pro Brake Fluid</div>
+                    <div class="product-item-desc">DOT 3 and DOT 4 brake fluids meeting or exceeding FMVSS 116 requirements for safe braking.</div>
+                    <span class="product-item-tag">Brake Fluid</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Service Pro Antifreeze</div>
+                    <div class="product-item-desc">Conventional and extended-life antifreeze/coolant for gasoline and diesel engines year-round.</div>
+                    <span class="product-item-tag">Coolant</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Service Pro Fuel Additive</div>
+                    <div class="product-item-desc">Multi-purpose fuel system cleaner and stabilizer for injectors, carburetors, and combustion chambers.</div>
+                    <span class="product-item-tag">Additive</span>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-name">Service Pro Aerosol Sprays</div>
+                    <div class="product-item-desc">Brake cleaner, carburetor cleaner, penetrating oil, and electrical contact cleaner in aerosol form.</div>
                     <span class="product-item-tag">Chemical</span>
                 </div>
             </div>
         </div>
 
-        <!-- COOLANTS -->
-        <div class="category-block reveal" data-category="coolants">
+        <!-- SUNOCO -->
+        <div class="category-block reveal" data-category="sunoco">
             <div class="category-header">
-                <div class="category-icon">❄️</div>
+                <div class="category-icon">
+                    <img src="../images/sunoco.png" alt="Sunoco" style="height:80px;width:auto;object-fit:contain;">
+                </div>
                 <div>
-                    <div class="category-title">Coolants & Antifreeze</div>
-                    <div class="category-count">Engine Coolants · Industrial Fluids · Concentration Options</div>
+                    <div class="category-title">Sunoco</div>
+                    <div class="category-count">Racing Fuels · High-Performance Oils · Additives · Power Sports</div>
+                </div>
+            </div>
+            <!-- Racing visual banner -->
+            <div style="position:relative;overflow:hidden;border-radius:3px;margin-bottom:20px;">
+                <img src="../images/car.png" alt="High performance vehicle" style="width:100%;height:200px;object-fit:cover;object-position:center 60%;display:block;">
+                <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(11,18,32,0.80) 40%,transparent 75%);display:flex;align-items:center;padding:0 36px;">
+                    <div>
+                        <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.06em;color:var(--white);line-height:1;">Fuels Built for Performance</div>
+                        <div style="font-size:0.88rem;font-weight:300;color:var(--silver);margin-top:6px;">From the track to the street — we carry what serious drivers demand.</div>
+                    </div>
                 </div>
             </div>
             <div class="product-grid">
                 <div class="product-item">
-                    <div class="product-item-name">Conventional Antifreeze</div>
-                    <div class="product-item-desc">Green conventional antifreeze/coolant for older engines and standard cooling systems.</div>
-                    <span class="product-item-tag">Coolant</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-item-name">Extended Life Coolant (OAT)</div>
-                    <div class="product-item-desc">Organic acid technology coolants offering up to 5-year or 150,000-mile service life.</div>
-                    <span class="product-item-tag">Coolant</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-item-name">Heavy-Duty Diesel Coolant</div>
-                    <div class="product-item-desc">Pre-charged coolants and concentrate formulated for diesel engines and fleet applications.</div>
-                    <span class="product-item-tag">Coolant</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-item-name">Propylene Glycol Coolant</div>
-                    <div class="product-item-desc">Low-toxicity coolant for food processing equipment and environmentally sensitive areas.</div>
-                    <span class="product-item-tag">Coolant</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-item-name">Coolant Additives & SCA</div>
-                    <div class="product-item-desc">Supplemental coolant additives and DCA products for diesel engine liner protection.</div>
-                    <span class="product-item-tag">Coolant</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-item-name">Industrial Process Coolants</div>
-                    <div class="product-item-desc">Closed-loop system fluids and heat transfer fluids for industrial process equipment.</div>
-                    <span class="product-item-tag">Coolant</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- ABSORBENTS -->
-        <div class="category-block reveal" data-category="absorbents">
-            <div class="category-header">
-                <div class="category-icon">🧹</div>
-                <div>
-                    <div class="category-title">Absorbents & Spill Control</div>
-                    <div class="category-count">Pads · Booms · Granular · Spill Kits</div>
-                </div>
-            </div>
-            <div class="product-grid">
-                <div class="product-item">
-                    <div class="product-item-name">Oil-Only Absorbent Pads</div>
-                    <div class="product-item-desc">Polypropylene pads that absorb oil and fuel while repelling water. Ideal for outdoor use.</div>
-                    <span class="product-item-tag">Absorbent</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-item-name">Universal Absorbent Pads</div>
-                    <div class="product-item-desc">All-purpose pads for oils, coolants, solvents, and water-based fluids.</div>
-                    <span class="product-item-tag">Absorbent</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-item-name">Hazmat Absorbent Pads</div>
-                    <div class="product-item-desc">Chemical-resistant pads for aggressive solvents, acids, and caustics.</div>
-                    <span class="product-item-tag">Absorbent</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-item-name">Absorbent Booms & Socks</div>
-                    <div class="product-item-desc">Flexible booms for containing and absorbing spills around machinery and drains.</div>
-                    <span class="product-item-tag">Absorbent</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-item-name">Granular Absorbents</div>
-                    <div class="product-item-desc">Clay and mineral-based granular absorbents for large spills on floors and outdoor surfaces.</div>
-                    <span class="product-item-tag">Absorbent</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-item-name">Spill Kits</div>
-                    <div class="product-item-desc">Complete OSHA-compliant spill response kits in a variety of sizes for oil, universal, or chemical spills.</div>
-                    <span class="product-item-tag">Absorbent</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- RACING FUELS -->
-        <div class="category-block reveal" data-category="fuels">
-            <div class="category-header">
-                <div class="category-icon">⛽</div>
-                <div>
-                    <div class="category-title">Racing Fuels</div>
-                    <div class="category-count">High-Performance Fuels · Additives · Power Sports</div>
-                </div>
-            </div>
-            <div class="product-grid">
-                <div class="product-item">
-                    <div class="product-item-name">Leaded Racing Fuel</div>
-                    <div class="product-item-desc">High-octane leaded fuel for circle track, drag racing, and vintage motorsports applications.</div>
+                    <div class="product-item-name">Sunoco Standard Leaded</div>
+                    <div class="product-item-desc">Classic leaded racing fuel for circle track and vintage motorsports. High octane, consistent quality.</div>
                     <span class="product-item-tag">Racing Fuel</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Unleaded Racing Fuel</div>
-                    <div class="product-item-desc">High-performance unleaded fuel for catalytic converter-equipped racing and road course vehicles.</div>
+                    <div class="product-item-name">Sunoco GT100 Unleaded</div>
+                    <div class="product-item-desc">High-performance unleaded fuel for road racing, autocross, and catalytic converter-equipped vehicles.</div>
                     <span class="product-item-tag">Racing Fuel</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Methanol</div>
-                    <div class="product-item-desc">Pure methanol for sprint cars, midgets, drag racing, and alcohol-fueled engines.</div>
+                    <div class="product-item-name">Sunoco Supreme 110 Leaded</div>
+                    <div class="product-item-desc">110 octane leaded fuel preferred by drag racers and oval track competitors for maximum power output.</div>
                     <span class="product-item-tag">Racing Fuel</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Ethanol / E85</div>
-                    <div class="product-item-desc">High-ethanol blend fuel for flex-fuel and dedicated ethanol racing applications.</div>
+                    <div class="product-item-name">Sunoco E85-R Ethanol</div>
+                    <div class="product-item-desc">Race-formulated E85 ethanol blend for flex-fuel and dedicated ethanol racing applications.</div>
                     <span class="product-item-tag">Racing Fuel</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Fuel Additives</div>
-                    <div class="product-item-desc">Octane boosters, fuel stabilizers, injector cleaners, and performance-enhancing additives.</div>
+                    <div class="product-item-name">Sunoco Methanol</div>
+                    <div class="product-item-desc">Pure methanol for sprint cars, midgets, and drag racing applications requiring alcohol fuel.</div>
                     <span class="product-item-tag">Racing Fuel</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Power Sports Fuels</div>
-                    <div class="product-item-desc">Pre-mixed and concentrate fuels for ATVs, snowmobiles, motorcycles, and small engines.</div>
-                    <span class="product-item-tag">Racing Fuel</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- EQUIPMENT -->
-        <div class="category-block reveal" data-category="equipment">
-            <div class="category-header">
-                <div class="category-icon">🔧</div>
-                <div>
-                    <div class="category-title">Equipment & Dispensing</div>
-                    <div class="category-count">Fluid Handling · Pumps · Containers · Accessories</div>
-                </div>
-            </div>
-            <div class="product-grid">
-                <div class="product-item">
-                    <div class="product-item-name">Drum Pumps</div>
-                    <div class="product-item-desc">Manual and electric drum pumps for transferring oils, chemicals, and fluids from drums and totes.</div>
-                    <span class="product-item-tag">Equipment</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-item-name">Oil Drain Pans & Containers</div>
-                    <div class="product-item-desc">Low-profile drain pans, funnel containers, and fluid transfer containers in multiple sizes.</div>
-                    <span class="product-item-tag">Equipment</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-item-name">Grease Guns</div>
-                    <div class="product-item-desc">Manual, pistol-grip, and battery-powered grease guns with a full range of fittings and accessories.</div>
-                    <span class="product-item-tag">Equipment</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-item-name">Oil Filter Crushers</div>
-                    <div class="product-item-desc">Wall-mounted and freestanding filter crushers to reduce waste volume and recover oil.</div>
-                    <span class="product-item-tag">Equipment</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-item-name">Fluid Storage Cabinets</div>
-                    <div class="product-item-desc">Flammable and non-flammable liquid storage cabinets compliant with OSHA and NFPA standards.</div>
-                    <span class="product-item-tag">Equipment</span>
-                </div>
-                <div class="product-item">
-                    <div class="product-item-name">Funnels, Nozzles & Hoses</div>
-                    <div class="product-item-desc">Dispensing accessories for clean and efficient fluid transfer in shop and industrial settings.</div>
-                    <span class="product-item-tag">Equipment</span>
+                    <div class="product-item-name">Sunoco PowerPlus Additive</div>
+                    <div class="product-item-desc">Fuel system performance additive for octane enhancement, injector cleaning, and deposit control.</div>
+                    <span class="product-item-tag">Additive</span>
                 </div>
             </div>
         </div>
@@ -632,7 +704,7 @@
 
     <script src="../main.js"></script>
     <script>
-        // Filter tabs
+        // Brand filter tabs
         const filterBtns = document.querySelectorAll('.filter-btn');
         const categories = document.querySelectorAll('.category-block');
 

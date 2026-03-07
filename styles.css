@@ -574,7 +574,7 @@ body::after {
     margin-bottom: 18px;
 }
 .product-icon {
-    width: 46px; height: 46px;
+    width: 92px; height: 92px;
     background: rgba(176,28,46,0.1);
     border: 1px solid rgba(176,28,46,0.22);
     border-radius: 4px;
