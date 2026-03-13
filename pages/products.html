@@ -138,7 +138,10 @@
             margin: 0 auto;
             padding: 70px 60px 100px;
         }
-        .category-block { margin-bottom: 80px; }
+        .category-block { 
+            margin-bottom: 80px;
+            scroll-margin-top: 150px; 
+        }
         .category-header {
             display: flex;
             align-items: center;
@@ -146,6 +149,7 @@
             margin-bottom: 32px;
             padding-bottom: 20px;
             border-bottom: 1px solid var(--divider);
+            justify-content: space-between;
         }
         .category-icon {
             width: 92px; height: 92px;
@@ -316,15 +320,18 @@
     <main class="products-main">
 
         <!-- CASTROL -->
-        <div class="category-block reveal" data-category="castrol">
+        <div class="category-block reveal" data-category="castrol" id="castrol">
             <div class="category-header">
-                <div class="category-icon">
-                    <img src="../images/castrol.png" alt="Castrol" style="height:80px;width:auto;object-fit:contain;">
+                <div style="display: flex; align-items: center; gap: 20px; flex: 1;">
+                    <div class="category-icon">
+                        <img src="../images/castrol.png" alt="Castrol" style="height:80px;width:auto;object-fit:contain;">
+                    </div>
+                    <div>
+                        <div class="category-title">Castrol</div>
+                        <div class="category-count">Motor Oils · Synthetic Lubricants · Industrial Fluids · Greases</div>
+                    </div>
                 </div>
-                <div>
-                    <div class="category-title">Castrol</div>
-                    <div class="category-count">Motor Oils · Synthetic Lubricants · Industrial Fluids · Greases</div>
-                </div>
+                <a href="https://www.castrol.com/en_us/united-states/home/products.html" target="_blank" rel="noopener noreferrer" class="btn-outline" style="white-space: nowrap;">Learn More</a>
             </div>
             <div class="product-grid">
                 <div class="product-item">
@@ -371,15 +378,18 @@
         </div>
 
         <!-- CHEVRON -->
-        <div class="category-block reveal" data-category="chevron">
+        <div class="category-block reveal" data-category="chevron" id="chevron">
             <div class="category-header">
-                <div class="category-icon">
-                    <img src="../images/chevron.png" alt="Chevron" style="height:80px;width:auto;object-fit:contain;">
+                <div style="display: flex; align-items: center; gap: 20px; flex: 1;">
+                    <div class="category-icon">
+                        <img src="../images/chevron.png" alt="Chevron" style="height:80px;width:auto;object-fit:contain;">
+                    </div>
+                    <div>
+                        <div class="category-title">Chevron</div>
+                        <div class="category-count">Delo Diesel Oils · Havoline Motor Oils · Hydraulics · Coolants</div>
+                    </div>
                 </div>
-                <div>
-                    <div class="category-title">Chevron</div>
-                    <div class="category-count">Delo Diesel Oils · Havoline Motor Oils · Hydraulics · Coolants</div>
-                </div>
+                <a href="https://www.chevronlubricants.com" target="_blank" rel="noopener noreferrer" class="btn-outline" style="white-space: nowrap;">Learn More</a>
             </div>
             <!-- Chevron visual banner -->
             <div style="position:relative;overflow:hidden;border-radius:3px;margin-bottom:20px;">
@@ -436,15 +446,18 @@
         </div>
 
         <!-- IRVING -->
-        <div class="category-block reveal" data-category="irving">
+        <div class="category-block reveal" data-category="irving" id="irving">
             <div class="category-header">
-                <div class="category-icon">
-                    <img src="../images/irving.png" alt="Irving" style="height:80px;width:auto;object-fit:contain;">
+                <div style="display: flex; align-items: center; gap: 20px; flex: 1;">
+                    <div class="category-icon">
+                        <img src="../images/irving.png" alt="Irving" style="height:80px;width:auto;object-fit:contain;">
+                    </div>
+                    <div>
+                        <div class="category-title">Irving</div>
+                        <div class="category-count">Motor Oils · Hydraulics · Gear Lubricants · Fluids</div>
+                    </div>
                 </div>
-                <div>
-                    <div class="category-title">Irving</div>
-                    <div class="category-count">Motor Oils · Hydraulics · Gear Lubricants · Fluids</div>
-                </div>
+                <a href="https://www.irvingoil.com" target="_blank" rel="noopener noreferrer" class="btn-outline" style="white-space: nowrap;">Learn More</a>
             </div>
             <div style="position:relative;overflow:hidden;border-radius:3px;margin-bottom:20px;">
                 <img src="../images/irvingbanner.png" alt="Irving Visual Banner" style="width:100%;height:200px;object-fit:cover;object-position:center 60%;display:block;">
@@ -490,61 +503,77 @@
         </div>
 
         <!-- PURUS -->
-        <div class="category-block reveal" data-category="purus">
+        <div class="category-block reveal" data-category="purus" id="purus">
             <div class="category-header">
-                <div class="category-icon">
-                    <img src="../images/purus.png" alt="Purus" style="height:80px;width:auto;object-fit:contain;">
+                <div style="display: flex; align-items: center; gap: 20px; flex: 1;">
+                    <div class="category-icon">
+                        <img src="../images/purus.png" alt="Purus" style="height:80px;width:auto;object-fit:contain;">
+                    </div>
+                    <div>
+                        <div class="category-title">Purus</div>
+                        <div class="category-count">Hydraulic Fluids · Gear Oils · Greases · Industrial Lubricants</div>
+                    </div>
                 </div>
-                <div>
-                    <div class="category-title">Purus</div>
-                    <div class="category-count">Food-Grade Lubricants · NSF H1 Certified · Compressor Oils · Greases</div>
+                <a href="https://purusproducts.com/products/" target="_blank" rel="noopener noreferrer" class="btn-outline" style="white-space: nowrap;">Learn More</a>
+            </div>
+            <!-- Purus visual banner -->
+            <div style="position:relative;overflow:hidden;border-radius:3px;margin-bottom:20px;">
+                <img src="../images/purusbanner.png" alt="Purus Banner" style="width:100%;height:200px;object-fit:cover;object-position:center 60%;display:block;">
+                <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(11,18,32,0.80) 40%,transparent 75%);display:flex;align-items:center;padding:0 36px;">
+                    <div>
+                        <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.06em;color:var(--white);line-height:1;">Built for every job site</div>
+                        <div style="font-size:0.88rem;font-weight:300;color:var(--silver);margin-top:6px;">Hydraulic fluids, grease, and gear oils for every demand.</div>
+                    </div>
                 </div>
             </div>
             
             <div class="product-grid">
                 <div class="product-item">
-                    <div class="product-item-name">Purus Food-Grade Hydraulic Oil</div>
-                    <div class="product-item-desc">NSF H1 registered hydraulic fluid for food processing and packaging equipment with incidental food contact.</div>
-                    <span class="product-item-tag">Food-Grade</span>
+                    <div class="product-item-name">Purus AW Hydraulic Oils</div>
+                    <div class="product-item-desc">Premium anti-wear hydraulic oils formulated for use in hydraulic systems and pumps operating under varying conditions with outstanding rust protection and low deposit formation.</div>
+                    <span class="product-item-tag">Hydraulic Oil</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Purus Food-Grade Gear Oil</div>
-                    <div class="product-item-desc">Synthetic food-safe gear lubricant for enclosed gearboxes in food and beverage manufacturing.</div>
-                    <span class="product-item-tag">Food-Grade</span>
+                    <div class="product-item-name">Purus Synthetic AW Hydraulics</div>
+                    <div class="product-item-desc">Full synthetic anti-wear hydraulic oil for high-performance industrial hydraulic systems requiring extended oil life and superior protection.</div>
+                    <span class="product-item-tag">Hydraulic Oil</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Purus Food-Grade Grease</div>
-                    <div class="product-item-desc">White mineral oil-based grease meeting NSF H1 approval for bearings near food processing lines.</div>
-                    <span class="product-item-tag">Food-Grade</span>
+                    <div class="product-item-name">Purus Premium Tractor Hydraulic</div>
+                    <div class="product-item-desc">High-quality specially designed hydraulic fluid for agricultural and industrial equipment with anti-rust, anti-foam and oxidation inhibitors.</div>
+                    <span class="product-item-tag">Hydraulic Fluid</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Purus Compressor Oil</div>
-                    <div class="product-item-desc">Food-safe compressor lubricant for air compressors in clean-room and food processing environments.</div>
-                    <span class="product-item-tag">Compressor Oil</span>
+                    <div class="product-item-name">Purus Extreme Pressure Gear Oils</div>
+                    <div class="product-item-desc">Premium extreme pressure industrial gear lubricants for excellent performance on enclosed gears of all types with exceptional wear protection.</div>
+                    <span class="product-item-tag">Gear Oil</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Purus Chain & Cable Oil</div>
-                    <div class="product-item-desc">NSF H1 food-grade chain lubricant for conveyor chains and cables in food production facilities.</div>
-                    <span class="product-item-tag">Food-Grade</span>
+                    <div class="product-item-name">Purus Alletor Heavy Duty Grease</div>
+                    <div class="product-item-desc">Commercial and industrial grease offering fine premium quality and exceptional wear protection for heavy duty on-road and off-road service.</div>
+                    <span class="product-item-tag">Grease</span>
                 </div>
                 <div class="product-item">
-                    <div class="product-item-name">Purus Penetrating Oil</div>
-                    <div class="product-item-desc">Food-safe penetrating and release agent for loosening fasteners and preventing corrosion.</div>
-                    <span class="product-item-tag">Food-Grade</span>
+                    <div class="product-item-name">Purus Alletor Extreme Pressure Grease</div>
+                    <div class="product-item-desc">Extreme pressure lithium grease formulated to provide exceptional performance in severe industrial and commercial applications.</div>
+                    <span class="product-item-tag">Grease</span>
                 </div>
             </div>
         </div>
 
         <!-- SERVICE PRO -->
-        <div class="category-block reveal" data-category="servicepro">
+        <div class="category-block reveal" data-category="servicepro" id="servicepro">
             <div class="category-header">
-                <div class="category-icon">
-                    <img src="../images/servicepro.png" alt="Service Pro" style="height:80px;width:auto;object-fit:contain;">
+                <div style="display: flex; align-items: center; gap: 20px; flex: 1;">
+                    <div class="category-icon">
+                        <img src="../images/servicepro.png" alt="Service Pro" style="height:80px;width:auto;object-fit:contain;">
+                    </div>
+                    <div>
+                        <div class="category-title">Service Pro</div>
+                        <div class="category-count">Motor Oils · Filters · Chemicals · Additives · Shop Supplies</div>
+                    </div>
                 </div>
-                <div>
-                    <div class="category-title">Service Pro</div>
-                    <div class="category-count">Motor Oils · Filters · Chemicals · Additives · Shop Supplies</div>
-                </div>
+                <a href="https://service-pro.com/products/" target="_blank" rel="noopener noreferrer" class="btn-outline" style="white-space: nowrap;">Learn More</a>
             </div>
             <!-- Servicepro visual banner -->
             <div style="position:relative;overflow:hidden;border-radius:3px;margin-bottom:20px;">
@@ -601,15 +630,18 @@
         </div>
 
         <!-- SUNOCO -->
-        <div class="category-block reveal" data-category="sunoco">
+        <div class="category-block reveal" data-category="sunoco" id="sunoco">
             <div class="category-header">
-                <div class="category-icon">
-                    <img src="../images/sunoco.png" alt="Sunoco" style="height:80px;width:auto;object-fit:contain;">
+                <div style="display: flex; align-items: center; gap: 20px; flex: 1;">
+                    <div class="category-icon">
+                        <img src="../images/sunoco.png" alt="Sunoco" style="height:80px;width:auto;object-fit:contain;">
+                    </div>
+                    <div>
+                        <div class="category-title">Sunoco</div>
+                        <div class="category-count">Racing Fuels · High-Performance Oils · Additives · Power Sports</div>
+                    </div>
                 </div>
-                <div>
-                    <div class="category-title">Sunoco</div>
-                    <div class="category-count">Racing Fuels · High-Performance Oils · Additives · Power Sports</div>
-                </div>
+                <a href="https://www.sunoco.com/" target="_blank" rel="noopener noreferrer" class="btn-outline" style="white-space: nowrap;">Learn More</a>
             </div>
             <!-- Racing visual banner -->
             <div style="position:relative;overflow:hidden;border-radius:3px;margin-bottom:20px;">
