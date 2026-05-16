@@ -610,12 +610,8 @@ body::after {
     transition: background 0.3s, border-color 0.3s;
     padding: 10px;
 }
-/* ── SVG FIX: logos on dark backgrounds ──
-   Most brand SVGs are designed for white/light contexts.
-   On our dark navy, dark fills vanish; bright fills look harsh.
-   We invert + tint to a clean white, then let hover restore them.  */
+
 .product-icon img {
-    filter: brightness(0) invert(1);
     opacity: 0.85;
     transition: filter 0.35s, opacity 0.35s;
     max-width: 100%;
@@ -870,7 +866,6 @@ body::after {
    SVGs in the category-icon box on products.html
 ════════════════════════════════ */
 .category-icon img {
-    filter: brightness(0) invert(1);
     opacity: 0.9;
     transition: filter 0.3s, opacity 0.3s;
     max-width: 100%;
@@ -882,7 +877,6 @@ body::after {
    Grayscale + invert so logos are legible on dark bg,
    then restore on hover                                */
 .brand-card img {
-    filter: brightness(0) invert(1) grayscale(100%);
     opacity: 0.5;
     transition: filter 0.3s, opacity 0.3s;
     max-width: 100%;
