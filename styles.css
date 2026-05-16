@@ -33,7 +33,9 @@ body {
     overflow-x: hidden;
 }
 
-/* ── NOISE TEXTURE OVERLAY ── */
+/* ── NOISE TEXTURE OVERLAY ──
+   FIX: z-index lowered from 9000 → 100 so it doesn't
+   block dropdowns, modals, or fixed elements            */
 body::after {
     content: '';
     position: fixed;
@@ -41,7 +43,7 @@ body::after {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     opacity: 0.03;
     pointer-events: none;
-    z-index: 9000;
+    z-index: 100;
 }
 
 /* ════════════════════════════════
@@ -108,6 +110,16 @@ body::after {
 }
 .nav-links a:hover { color: var(--white); }
 .nav-links a:hover::after { transform: scaleX(1); }
+
+/* FIX: active nav link indicator */
+.nav-links a[aria-current="page"] {
+    color: var(--white);
+}
+.nav-links a[aria-current="page"]::after {
+    transform: scaleX(1);
+    background: var(--blue-bright);
+}
+
 .nav-cta {
     background: var(--red-mid) !important;
     color: var(--white) !important;
@@ -131,6 +143,17 @@ body::after {
     width: 26px; height: 2px;
     background: var(--silver);
     transition: all 0.3s;
+}
+/* FIX: animated hamburger → X on open */
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ════════════════════════════════
@@ -576,8 +599,8 @@ body::after {
 }
 .product-icon {
     width: 92px; height: 92px;
-    background: rgba(176,28,46,0.1);
-    border: 1px solid rgba(176,28,46,0.22);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -585,10 +608,28 @@ body::after {
     font-size: 1.3rem;
     margin-bottom: 18px;
     transition: background 0.3s, border-color 0.3s;
+    padding: 10px;
+}
+/* ── SVG FIX: logos on dark backgrounds ──
+   Most brand SVGs are designed for white/light contexts.
+   On our dark navy, dark fills vanish; bright fills look harsh.
+   We invert + tint to a clean white, then let hover restore them.  */
+.product-icon img {
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+    transition: filter 0.35s, opacity 0.35s;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 .product-card:hover .product-icon {
     background: rgba(42,125,225,0.12);
     border-color: rgba(42,125,225,0.28);
+}
+/* On hover, restore color for logos that support it */
+.product-card:hover .product-icon img {
+    filter: none;
+    opacity: 1;
 }
 .product-card h3 {
     font-family: 'Bebas Neue', sans-serif;
@@ -603,31 +644,26 @@ body::after {
     color: var(--silver);
     line-height: 1.65;
 }
+
+/* FIX: product-arrow — was a bare div wrapping an <a>,
+   now the <a> is the product-arrow directly (consistent) */
 .product-arrow {
     position: absolute;
     bottom: 24px; right: 24px;
     width: 30px; height: 30px;
     border: 1px solid var(--divider);
     border-radius: 50%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     color: var(--steel);
     font-size: 0.85rem;
+    text-decoration: none;
     transition: all 0.3s;
 }
-.product-arrow a{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    cursor: pointer;
-    position: relative;
-    z-index: 5;
-}
 .product-card:hover .product-arrow {
-    border-color: var(--divider);
-    color: var(--steel);
+    border-color: var(--blue-bright);
+    color: var(--blue-bright);
     transform: translate(2px, -2px);
 }
 
@@ -740,6 +776,7 @@ body::after {
 
 /* ════════════════════════════════
    FOOTER
+   FIX: removed redundant inner padding from footer-legal
 ════════════════════════════════ */
 .footer {
     background: var(--navy);
@@ -754,22 +791,19 @@ body::after {
     animation: lineShift 4s linear infinite;
     margin-bottom: 56px;
 }
-
 .footer-legal {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 60px 18px;
+    padding-top: 18px;
     text-align: center;
     border-top: 1px solid rgba(255,255,255,0.08);
 }
-
 .footer-legal p {
     margin: 18px 0 0;
     font-size: 0.78rem;
     line-height: 1.6;
     color: rgba(255,255,255,0.62);
 }
-
 @keyframes lineShift {
     0%   { background-position: 0% 0; }
     100% { background-position: 200% 0; }
@@ -832,6 +866,33 @@ body::after {
 }
 
 /* ════════════════════════════════
+   PRODUCTS PAGE — Category logo fix
+   SVGs in the category-icon box on products.html
+════════════════════════════════ */
+.category-icon img {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    transition: filter 0.3s, opacity 0.3s;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* ── ABOUT PAGE — Brand grid logo fix ──
+   Grayscale + invert so logos are legible on dark bg,
+   then restore on hover                                */
+.brand-card img {
+    filter: brightness(0) invert(1) grayscale(100%);
+    opacity: 0.5;
+    transition: filter 0.3s, opacity 0.3s;
+    max-width: 100%;
+}
+.brand-card:hover img {
+    filter: none;
+    opacity: 1;
+}
+
+/* ════════════════════════════════
    SCROLL REVEAL ANIMATIONS
 ════════════════════════════════ */
 @keyframes fadeUp {
@@ -858,6 +919,41 @@ body::after {
 }
 
 /* ════════════════════════════════
+   FORM SUCCESS / ERROR STATES
+   (used by contact.html JS)
+════════════════════════════════ */
+.form-success {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+}
+.form-success .success-icon { font-size: 3rem; margin-bottom: 16px; }
+.form-success h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+.form-success p {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--silver);
+}
+
+.form-error-msg {
+    display: none;
+    background: rgba(176,28,46,0.12);
+    border: 1px solid rgba(224,51,72,0.35);
+    border-radius: 2px;
+    padding: 12px 16px;
+    margin-top: 14px;
+    font-size: 0.88rem;
+    color: var(--red-bright);
+    text-align: center;
+}
+
+/* ════════════════════════════════
    RESPONSIVE
 ════════════════════════════════ */
 @media (max-width: 960px) {
@@ -873,6 +969,7 @@ body::after {
         padding: 20px 24px 28px;
         gap: 18px;
         backdrop-filter: blur(16px);
+        z-index: 490;
     }
     .menu-toggle { display: flex; }
     .hero-inner { grid-template-columns: 1fr; padding: 30px 24px 60px; gap: 36px; }
