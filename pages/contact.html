@@ -422,15 +422,12 @@
 
         </div>
 
-        <!-- RIGHT: Form -->
+<!-- RIGHT: Form -->
         <div class="contact-form-panel reveal">
             <div class="form-title">Send Us a Message</div>
             <p class="form-sub">Fill out the form below and we'll respond within one business day.</p>
 
-            <form action="https://api.web3forms.com/submit" method="POST">
-                <!--config -->
-                <input type="hidden" name="access_key" value="6e655abb-c72a-4c03-9787-333bf16e9e72">
-
+            <form id="contactForm">
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="firstName">First Name <span class="req">*</span></label>
@@ -470,7 +467,14 @@
                 </div>
 
                 <button type="submit" class="form-submit">Send Message</button>
+                <p class="form-error-msg" role="alert">Something went wrong. Please try again or call us directly.</p>
             </form>
+
+            <div class="form-success" role="status" aria-live="polite">
+                <div class="success-icon">✅</div>
+                <h3>Message Sent!</h3>
+                <p>Thanks for reaching out — we'll be in touch within one business day.</p>
+            </div>
         </div>
 
     </main>
